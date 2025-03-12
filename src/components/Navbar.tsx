@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,11 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  // Close mobile menu when changing routes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
   
   return (
     <nav 
@@ -38,11 +44,21 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#technology-section" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Technology</a>
-            <a href="#urban-problem" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Benefits</a>
-            <Link to="/about" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">About</Link>
-            <Link to="/terms" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Terms</Link>
-            <Link to="/privacy" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Privacy</Link>
+            <Link to="/#technology-section" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">
+              Technology
+            </Link>
+            <Link to="/#urban-problem" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">
+              Benefits
+            </Link>
+            <Link to="/about" className={`text-sm font-medium ${location.pathname === '/about' ? 'text-gold' : 'text-gray-200 hover:text-gold'} transition-colors`}>
+              About
+            </Link>
+            <Link to="/terms" className={`text-sm font-medium ${location.pathname === '/terms' ? 'text-gold' : 'text-gray-200 hover:text-gold'} transition-colors`}>
+              Terms
+            </Link>
+            <Link to="/privacy" className={`text-sm font-medium ${location.pathname === '/privacy' ? 'text-gold' : 'text-gray-200 hover:text-gold'} transition-colors`}>
+              Privacy
+            </Link>
             <Link to="/contact" className="button-shine text-sm font-medium bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow">
               Pre-Order
             </Link>
@@ -66,45 +82,39 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 flex flex-col space-y-4">
-          <a 
-            href="#technology-section" 
+          <Link 
+            to="/#technology-section" 
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             Technology
-          </a>
-          <a 
-            href="#urban-problem" 
+          </Link>
+          <Link 
+            to="/#urban-problem" 
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             Benefits
-          </a>
+          </Link>
           <Link 
             to="/about" 
-            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
+            className={`py-2 px-4 rounded-md transition-colors ${location.pathname === '/about' ? 'text-gold' : 'text-gray-200 hover:text-gold'}`}
           >
             About
           </Link>
           <Link 
             to="/terms" 
-            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
+            className={`py-2 px-4 rounded-md transition-colors ${location.pathname === '/terms' ? 'text-gold' : 'text-gray-200 hover:text-gold'}`}
           >
             Terms
           </Link>
           <Link 
             to="/privacy" 
-            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
+            className={`py-2 px-4 rounded-md transition-colors ${location.pathname === '/privacy' ? 'text-gold' : 'text-gray-200 hover:text-gold'}`}
           >
             Privacy
           </Link>
           <Link 
             to="/contact" 
             className="bg-gradient-gold text-dark py-2 px-4 rounded-md font-medium"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             Pre-Order
           </Link>

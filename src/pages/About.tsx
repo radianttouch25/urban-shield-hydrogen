@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
@@ -8,7 +9,7 @@ import JourneySection from "@/components/about/JourneySection";
 import TeamSection from "@/components/about/TeamSection";
 
 const About = () => {
-  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
