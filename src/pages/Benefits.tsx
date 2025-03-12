@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
@@ -5,7 +6,8 @@ import Footer from "@/components/Footer";
 import { Shield, Clock, Droplets, Sun, Feather, Heart, Check } from 'lucide-react';
 
 const Benefits = () => {
-  const sectionsRef = useRef<HTMLDivElement[]>([]);
+  // Fix 1: Use a correctly typed ref array with non-null assertion for when we add elements
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,6 +23,7 @@ const Benefits = () => {
       { threshold: 0.1 }
     );
     
+    // Filter out null values before observing
     sectionsRef.current.forEach(section => {
       if (section) observer.observe(section);
     });
@@ -44,7 +47,7 @@ const Benefits = () => {
       <main className="pt-32 pb-20">
         {/* Hero Section */}
         <section 
-          ref={el => (sectionsRef.current[0] = el)}
+          ref={el => (sectionsRef.current[0] = el)} 
           className="opacity-0 translate-y-10 transition-all duration-1000 relative py-20 overflow-hidden"
         >
           <div className="absolute inset-0 opacity-10 bg-noise mix-blend-overlay"></div>

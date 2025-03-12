@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
@@ -5,7 +6,8 @@ import Footer from "@/components/Footer";
 import { Check, Zap, Shield, Sparkles, Droplets, Beaker } from 'lucide-react';
 
 const Technology = () => {
-  const sectionsRef = useRef<HTMLDivElement[]>([]);
+  // Fix 1: Use a correctly typed ref array with non-null assertion for when we add elements
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,6 +23,7 @@ const Technology = () => {
       { threshold: 0.1 }
     );
     
+    // Filter out null values before observing
     sectionsRef.current.forEach(section => {
       if (section) observer.observe(section);
     });
