@@ -29,7 +29,7 @@ const JourneySection = forwardRef<HTMLDivElement, JourneySectionProps>(
                 <div className="bg-gold h-3 w-3 rounded-full"></div>
               </div>
               <div className="bg-dark/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <h3 className="text-gold text-xl font-bold mb-2">2018</h3>
+                <h3 className="text-gold text-xl font-bold mb-2">2022</h3>
                 <h4 className="text-white text-lg font-semibold mb-3">Research Begins</h4>
                 <p className="text-gray-300">
                   Our team of dermatologists and cosmetic chemists began research on urban environmental factors affecting skin health.
@@ -42,7 +42,7 @@ const JourneySection = forwardRef<HTMLDivElement, JourneySectionProps>(
                 <div className="bg-gold h-3 w-3 rounded-full"></div>
               </div>
               <div className="bg-dark/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <h3 className="text-gold text-xl font-bold mb-2">2020</h3>
+                <h3 className="text-gold text-xl font-bold mb-2">2023</h3>
                 <h4 className="text-white text-lg font-semibold mb-3">Breakthrough Discovery</h4>
                 <p className="text-gray-300">
                   After years of research, our team made a breakthrough in molecular shield technology that effectively blocks urban pollutants.
@@ -55,7 +55,7 @@ const JourneySection = forwardRef<HTMLDivElement, JourneySectionProps>(
                 <div className="bg-gold h-3 w-3 rounded-full"></div>
               </div>
               <div className="bg-dark/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <h3 className="text-gold text-xl font-bold mb-2">2022</h3>
+                <h3 className="text-gold text-xl font-bold mb-2">December 10, 2024</h3>
                 <h4 className="text-white text-lg font-semibold mb-3">Radiant Touch LIMITED Founded</h4>
                 <p className="text-gray-300">
                   We established Radiant Touch LIMITED to bring our revolutionary Urban Shield technology to market and protect urban skin worldwide.
@@ -68,7 +68,7 @@ const JourneySection = forwardRef<HTMLDivElement, JourneySectionProps>(
                 <div className="bg-gold h-3 w-3 rounded-full"></div>
               </div>
               <div className="bg-dark/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <h3 className="text-gold text-xl font-bold mb-2">2023</h3>
+                <h3 className="text-gold text-xl font-bold mb-2">March 31, 2025</h3>
                 <h4 className="text-white text-lg font-semibold mb-3">Global Launch</h4>
                 <p className="text-gray-300">
                   Urban Shield launches globally, bringing advanced pollution protection to urban dwellers in major cities around the world.

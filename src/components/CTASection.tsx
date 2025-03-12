@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { CreditCard, DollarSign, Mail, ArrowRight, Shield, TrendingUp, ChartBar, Percent } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
@@ -60,7 +59,7 @@ const CTASection = () => {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400">Launch Date</p>
-                      <p className="text-sm font-medium text-white">August 2023</p>
+                      <p className="text-sm font-medium text-white">March 31, 2025</p>
                     </div>
                     <div className="bg-gold/20 px-3 py-1 rounded-full">
                       <span className="text-xs font-medium text-gold">20% OFF</span>
@@ -247,13 +246,13 @@ const CTASection = () => {
                         <div className="h-[40%] w-full bg-gradient-to-t from-blue-500/70 to-blue-500/20 rounded-t-md relative">
                           <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">$240B</span>
                         </div>
-                        <span className="text-xs mt-2 text-gray-400">2022</span>
+                        <span className="text-xs mt-2 text-gray-400">2024</span>
                       </div>
                       <div className="flex-1 flex flex-col items-center justify-end h-full">
                         <div className="h-[48%] w-full bg-gradient-to-t from-blue-500/70 to-blue-500/20 rounded-t-md relative">
                           <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">$288B</span>
                         </div>
-                        <span className="text-xs mt-2 text-gray-400">2024</span>
+                        <span className="text-xs mt-2 text-gray-400">2025</span>
                       </div>
                       <div className="flex-1 flex flex-col items-center justify-end h-full">
                         <div className="h-[58%] w-full bg-gradient-to-t from-blue-500/70 to-blue-500/20 rounded-t-md relative">

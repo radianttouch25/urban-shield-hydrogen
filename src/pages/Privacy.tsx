@@ -1,7 +1,7 @@
-
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet";
 
 const Privacy = () => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -33,6 +33,11 @@ const Privacy = () => {
 
   return (
     <div className="min-h-screen bg-dark text-white">
+      <Helmet>
+        <title>Privacy Policy | Urban Shield</title>
+        <meta name="description" content="Privacy Policy for Radiant Touch LIMITED and Urban Shield products." />
+      </Helmet>
+      
       <Navbar />
       
       <main className="pt-32 pb-20">
@@ -127,7 +132,7 @@ const Privacy = () => {
                 If you have any questions about this Privacy Policy, please contact us at privacy@radianttouch.com.
               </p>
               
-              <p className="text-sm text-gray-400">Last Updated: June 15, 2023</p>
+              <p className="text-sm text-gray-400">Last Updated: December 20, 2024</p>
             </div>
           </div>
         </div>

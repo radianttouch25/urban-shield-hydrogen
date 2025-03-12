@@ -1,7 +1,7 @@
-
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet";
 
 const Terms = () => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -33,6 +33,11 @@ const Terms = () => {
 
   return (
     <div className="min-h-screen bg-dark text-white">
+      <Helmet>
+        <title>Terms of Service | Urban Shield</title>
+        <meta name="description" content="Terms of Service for Radiant Touch LIMITED and Urban Shield products." />
+      </Helmet>
+      
       <Navbar />
       
       <main className="pt-32 pb-20">
@@ -113,7 +118,7 @@ const Terms = () => {
                 If you have any questions about these Terms, please contact us at legal@radianttouch.com.
               </p>
               
-              <p className="text-sm text-gray-400">Last Updated: June 15, 2023</p>
+              <p className="text-sm text-gray-400">Last Updated: December 20, 2024</p>
             </div>
           </div>
         </div>
