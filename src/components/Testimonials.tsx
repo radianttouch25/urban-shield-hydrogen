@@ -15,7 +15,7 @@ const testimonials = [
     id: 2,
     name: 'Michael T.',
     role: 'Dermatologist',
-    content: 'As a dermatologist, I'm impressed by the science behind Urban Shield. The combination of molecular protection and smart hydration offers my patients superior defense against urban environmental factors. I recommend it to all my city-dwelling patients.',
+    content: 'As a dermatologist, I\'m impressed by the science behind Urban Shield. The combination of molecular protection and smart hydration offers my patients superior defense against urban environmental factors. I recommend it to all my city-dwelling patients.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80'
   },
@@ -23,7 +23,7 @@ const testimonials = [
     id: 3,
     name: 'Jennifer L.',
     role: 'Marketing Executive',
-    content: 'My job requires long hours in polluted urban environments. Urban Shield has noticeably reduced my skin's stress response. My complexion is clearer, and I no longer get the dry patches I used to experience from pollution exposure.',
+    content: 'My job requires long hours in polluted urban environments. Urban Shield has noticeably reduced my skin\'s stress response. My complexion is clearer, and I no longer get the dry patches I used to experience from pollution exposure.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80'
   },

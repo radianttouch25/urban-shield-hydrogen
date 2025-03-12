@@ -14,7 +14,7 @@ const features = [
     id: 'hydration',
     icon: <Droplets className="h-8 w-8 text-silver" />,
     title: 'Smart Hydration',
-    description: 'Adaptive moisture technology that responds to your skin's changing needs throughout the day, delivering hydration exactly when needed.',
+    description: 'Adaptive moisture technology that responds to your skin\'s changing needs throughout the day, delivering hydration exactly when needed.',
     gradient: 'from-silver/20 via-transparent to-transparent',
   },
   {

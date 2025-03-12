@@ -21,7 +21,7 @@ const technologies = [
     id: 'hydration',
     icon: <Droplets className="h-8 w-8" />,
     title: 'Smart Hydration',
-    description: 'Smart Hydration technology uses hyaluronic acid microspheres that respond to your skin's changing moisture needs throughout the day. The responsive hydration system delivers moisture precisely when and where your skin needs it most.',
+    description: 'Smart Hydration technology uses hyaluronic acid microspheres that respond to your skin\'s changing moisture needs throughout the day. The responsive hydration system delivers moisture precisely when and where your skin needs it most.',
     details: [
       'Adaptive moisture delivery',
       'Multiple hyaluronic acid weights',
@@ -35,7 +35,7 @@ const technologies = [
     id: 'pollution',
     icon: <Wind className="h-8 w-8" />,
     title: 'Anti-Pollution Complex',
-    description: 'Our Anti-Pollution Complex neutralizes free radicals and repairs existing damage caused by urban pollutants. The formula contains powerful antioxidants that protect against oxidative stress and restore your skin's natural defense mechanisms.',
+    description: 'Our Anti-Pollution Complex neutralizes free radicals and repairs existing damage caused by urban pollutants. The formula contains powerful antioxidants that protect against oxidative stress and restore your skin\'s natural defense mechanisms.',
     details: [
       'Neutralizes free radicals',
       'Repairs cellular damage',
