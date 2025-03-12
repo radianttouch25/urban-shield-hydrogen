@@ -109,14 +109,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
-                  Careers
-                </a>
+                <Link to="/invest" className="text-gray-400 hover:text-gold transition-colors">
+                  Investors
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
-                  Press
-                </a>
+                <Link to="/about" className="text-gray-400 hover:text-gold transition-colors">
+                  Our Team
+                </Link>
               </li>
             </ul>
           </div>
@@ -140,9 +140,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
-                  Return Policy
-                </a>
+                <Link to="/privacy" className="text-gray-400 hover:text-gold transition-colors">
+                  Cookie Policy
+                </Link>
               </li>
             </ul>
           </div>
