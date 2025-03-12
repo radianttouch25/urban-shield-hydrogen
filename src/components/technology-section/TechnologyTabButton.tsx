@@ -13,6 +13,8 @@ const TechnologyTabButton: React.FC<TechnologyTabButtonProps> = ({
   isActive, 
   onClick 
 }) => {
+  const IconComponent = technology.icon;
+  
   return (
     <button
       onClick={onClick}
@@ -24,7 +26,7 @@ const TechnologyTabButton: React.FC<TechnologyTabButtonProps> = ({
       style={isActive ? {backgroundColor: `var(--${technology.color}, #D4AF37)`} : {}}
     >
       <span className={`mr-2 ${isActive ? 'text-dark' : `text-${technology.color}`}`}>
-        {technology.icon}
+        <IconComponent className="h-8 w-8" />
       </span>
       {technology.title}
     </button>

@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Technology {
   id: string;
-  icon: React.ReactNode;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
   details: string[];
@@ -15,7 +15,7 @@ export interface Technology {
 export const technologies: Technology[] = [
   {
     id: 'molecular',
-    icon: <Shield className="h-8 w-8" />,
+    icon: Shield,
     title: 'Molecular Shield Technology',
     description: 'Our proprietary Molecular Shield Technology creates an invisible protective barrier on your skin that blocks pollutants, UV radiation, and other environmental toxins. The shield is breathable, allowing your skin to function naturally while providing comprehensive protection.',
     details: [
@@ -29,7 +29,7 @@ export const technologies: Technology[] = [
   },
   {
     id: 'antioxidant',
-    icon: <Zap className="h-8 w-8" />,
+    icon: Zap,
     title: 'Antioxidant Complex',
     description: 'Our powerful blend of vitamins A, C, and E neutralizes free radicals and provides cellular protection. These antioxidants work synergistically to prevent oxidative stress caused by pollution and UV exposure, while helping repair existing damage to maintain skin\'s youthful appearance.',
     details: [
@@ -43,7 +43,7 @@ export const technologies: Technology[] = [
   },
   {
     id: 'barrier',
-    icon: <Droplets className="h-8 w-8" />,
+    icon: Droplets,
     title: 'Barrier Strengthening',
     description: 'Our precision-engineered ceramide and peptide complex rebuilds and reinforces your skin\'s natural barrier function. These biomimetic ingredients integrate with your skin\'s structure to create a stronger defense against environmental aggressors while improving moisture retention.',
     details: [
@@ -57,7 +57,7 @@ export const technologies: Technology[] = [
   },
   {
     id: 'biotech',
-    icon: <Leaf className="h-8 w-8" />,
+    icon: Leaf,
     title: 'Pollution-Neutralizing Biotech',
     description: 'Urban Shield utilizes cutting-edge biotechnology ingredients that actively neutralize pollution particles on contact. Our fast-absorbing, non-greasy formula creates an invisible shield that prevents pollutants from adhering to the skin while providing hydration and protection against blue light from electronic devices.',
     details: [
