@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Shield, Droplets, Wind, Play, Pause } from 'lucide-react';
 
@@ -172,7 +171,7 @@ const TechnologySection = () => {
           
           {/* Image/Video */}
           <div className="order-1 lg:order-2 relative">
-            <div className={`absolute -inset-4 bg-gradient-radial from-${technologies[activeTab].color}/30 via-transparent to-transparent opacity-70 filter blur-xl`} style={{from: `var(--${technologies[activeTab].color}30, rgba(212, 175, 55, 0.3))`}}></div>
+            <div className={`absolute -inset-4 bg-gradient-radial from-${technologies[activeTab].color}/30 via-transparent to-transparent opacity-70 filter blur-xl`}></div>
             
             <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-square">
               <img 

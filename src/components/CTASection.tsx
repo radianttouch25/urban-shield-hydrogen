@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { CreditCard, DollarSign, Mail, ArrowRight } from 'lucide-react';
+import { CreditCard, DollarSign, Mail, ArrowRight, Shield } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 
 const CTASection = () => {
