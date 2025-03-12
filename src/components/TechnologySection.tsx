@@ -64,6 +64,7 @@ const technologies = [
 const TechnologySection = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -89,7 +90,11 @@ const TechnologySection = () => {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
+            if (entry.target === sectionRef.current) {
+              setIsVisible(true);
+            } else {
+              entry.target.classList.add('animate-fade-in');
+            }
             observer.unobserve(entry.target);
           }
         });
@@ -122,18 +127,21 @@ const TechnologySection = () => {
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10 bg-noise mix-blend-overlay"></div>
       
-      <div ref={sectionRef} className="container mx-auto px-4 opacity-0">
+      <div 
+        ref={sectionRef} 
+        className={`container mx-auto px-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      >
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div 
             ref={el => (elementsRef.current[0] = el)} 
-            className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 opacity-0 transform translate-y-4 transition-all duration-700"
+            className={`inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 transform transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <span className="text-gold text-sm">The Science Behind Urban Shield</span>
           </div>
           
           <h2 
             ref={el => (elementsRef.current[1] = el)} 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 opacity-0 transform translate-y-4 transition-all duration-700 delay-100"
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 transform transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <span className="text-white">The Science of Urban</span>
             <span className="block text-gradient-gold">Skin Protection Has Evolved</span>
@@ -141,7 +149,7 @@ const TechnologySection = () => {
           
           <p 
             ref={el => (elementsRef.current[2] = el)} 
-            className="text-lg text-gray-300 opacity-0 transform translate-y-4 transition-all duration-700 delay-200"
+            className={`text-lg text-gray-300 transform transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             Discover the breakthrough technologies that make Urban Shield the most advanced skincare protection system available for modern urban environments.
           </p>
@@ -150,7 +158,7 @@ const TechnologySection = () => {
         {/* Tabs navigation */}
         <div 
           ref={el => (elementsRef.current[3] = el)} 
-          className="flex flex-wrap justify-center mb-12 overflow-x-auto opacity-0 transform translate-y-4 transition-all duration-700 delay-300"
+          className={`flex flex-wrap justify-center mb-12 overflow-x-auto transform transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
         >
           <div className="flex p-1 rounded-lg bg-dark-light/50 backdrop-blur-sm border border-white/5">
             {technologies.map((tech, index) => (
@@ -178,7 +186,7 @@ const TechnologySection = () => {
           {/* Text content */}
           <div 
             ref={el => (elementsRef.current[4] = el)} 
-            className="order-2 lg:order-1 opacity-0 transform translate-y-4 transition-all duration-700 delay-400"
+            className={`order-2 lg:order-1 transform transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <h3 className={`text-2xl md:text-3xl font-bold mb-6 text-${technologies[activeTab].color}`} style={{color: `var(--${technologies[activeTab].color}, #D4AF37)`}}>
               {technologies[activeTab].title}
@@ -214,7 +222,7 @@ const TechnologySection = () => {
           {/* Image/Video */}
           <div 
             ref={el => (elementsRef.current[5] = el)} 
-            className="order-1 lg:order-2 relative opacity-0 transform translate-y-4 transition-all duration-700 delay-500"
+            className={`order-1 lg:order-2 relative transform transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
             <div className={`absolute -inset-4 bg-gradient-radial from-${technologies[activeTab].color}/30 via-transparent to-transparent opacity-70 filter blur-xl`}></div>
             
@@ -246,7 +254,7 @@ const TechnologySection = () => {
         {/* Sustainability & Ethics Section */}
         <div 
           ref={el => (elementsRef.current[6] = el)} 
-          className="mt-16 pt-16 border-t border-white/10 opacity-0 transform translate-y-4 transition-all duration-700 delay-600"
+          className={`mt-16 pt-16 border-t border-white/10 transform transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
         >
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
