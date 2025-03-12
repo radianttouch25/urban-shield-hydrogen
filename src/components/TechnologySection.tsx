@@ -66,6 +66,7 @@ const TechnologySection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
   
   const handleTabChange = (index: number) => {
     setActiveTab(index);
@@ -86,48 +87,71 @@ const TechnologySection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          entries[0].target.classList.add('animate-fade-in');
-          observer.unobserve(entries[0].target);
-        }
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
       },
       { threshold: 0.1 }
     );
     
+    // Observe the main section
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+    
+    // Observe individual elements for animation
+    elementsRef.current.forEach(el => {
+      if (el) observer.observe(el);
+    });
     
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
+      elementsRef.current.forEach(el => {
+        if (el) observer.unobserve(el);
+      });
     };
   }, []);
   
   return (
-    <section id="solution" className="relative py-24 md:py-32 bg-dark overflow-hidden">
+    <section id="technology-section" className="relative py-20 md:py-24 bg-dark overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10 bg-noise mix-blend-overlay"></div>
       
       <div ref={sectionRef} className="container mx-auto px-4 opacity-0">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+          <div 
+            ref={el => (elementsRef.current[0] = el)} 
+            className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 opacity-0 transform translate-y-4 transition-all duration-700"
+          >
             <span className="text-gold text-sm">The Science Behind Urban Shield</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 
+            ref={el => (elementsRef.current[1] = el)} 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 opacity-0 transform translate-y-4 transition-all duration-700 delay-100"
+          >
             <span className="text-white">The Science of Urban</span>
             <span className="block text-gradient-gold">Skin Protection Has Evolved</span>
           </h2>
           
-          <p className="text-lg text-gray-300">
+          <p 
+            ref={el => (elementsRef.current[2] = el)} 
+            className="text-lg text-gray-300 opacity-0 transform translate-y-4 transition-all duration-700 delay-200"
+          >
             Discover the breakthrough technologies that make Urban Shield the most advanced skincare protection system available for modern urban environments.
           </p>
         </div>
         
         {/* Tabs navigation */}
-        <div className="flex flex-wrap justify-center mb-12 overflow-x-auto">
+        <div 
+          ref={el => (elementsRef.current[3] = el)} 
+          className="flex flex-wrap justify-center mb-12 overflow-x-auto opacity-0 transform translate-y-4 transition-all duration-700 delay-300"
+        >
           <div className="flex p-1 rounded-lg bg-dark-light/50 backdrop-blur-sm border border-white/5">
             {technologies.map((tech, index) => (
               <button
@@ -152,7 +176,10 @@ const TechnologySection = () => {
         {/* Tab content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
-          <div className="order-2 lg:order-1">
+          <div 
+            ref={el => (elementsRef.current[4] = el)} 
+            className="order-2 lg:order-1 opacity-0 transform translate-y-4 transition-all duration-700 delay-400"
+          >
             <h3 className={`text-2xl md:text-3xl font-bold mb-6 text-${technologies[activeTab].color}`} style={{color: `var(--${technologies[activeTab].color}, #D4AF37)`}}>
               {technologies[activeTab].title}
             </h3>
@@ -185,7 +212,10 @@ const TechnologySection = () => {
           </div>
           
           {/* Image/Video */}
-          <div className="order-1 lg:order-2 relative">
+          <div 
+            ref={el => (elementsRef.current[5] = el)} 
+            className="order-1 lg:order-2 relative opacity-0 transform translate-y-4 transition-all duration-700 delay-500"
+          >
             <div className={`absolute -inset-4 bg-gradient-radial from-${technologies[activeTab].color}/30 via-transparent to-transparent opacity-70 filter blur-xl`}></div>
             
             <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-square">
@@ -214,7 +244,10 @@ const TechnologySection = () => {
         </div>
         
         {/* Sustainability & Ethics Section */}
-        <div className="mt-20 pt-16 border-t border-white/10">
+        <div 
+          ref={el => (elementsRef.current[6] = el)} 
+          className="mt-16 pt-16 border-t border-white/10 opacity-0 transform translate-y-4 transition-all duration-700 delay-600"
+        >
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
               <span className="text-gradient-gold">Sustainability Commitment</span>

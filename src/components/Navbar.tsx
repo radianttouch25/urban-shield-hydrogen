@@ -30,20 +30,18 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="flex items-center"
+            className="text-xl font-bold text-white"
           >
-            <img 
-              src="/lovable-uploads/d926396f-8e77-4f5d-9d84-c626235ee99e.png" 
-              alt="Radiant Touch" 
-              className="h-10 md:h-12" 
-            />
+            Urban Shield
           </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#technology-section" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Technology</a>
             <a href="#urban-problem" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Benefits</a>
-            <a href="#sustainability" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">About</a>
+            <Link to="/about" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">About</Link>
+            <Link to="/terms" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Terms</Link>
+            <Link to="/privacy" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Privacy</Link>
             <Link to="/contact" className="button-shine text-sm font-medium bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow">
               Pre-Order
             </Link>
@@ -81,13 +79,27 @@ const Navbar = () => {
           >
             Benefits
           </a>
-          <a 
-            href="#sustainability" 
+          <Link 
+            to="/about" 
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About
-          </a>
+          </Link>
+          <Link 
+            to="/terms" 
+            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Terms
+          </Link>
+          <Link 
+            to="/privacy" 
+            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Privacy
+          </Link>
           <Link 
             to="/contact" 
             className="bg-gradient-gold text-dark py-2 px-4 rounded-md font-medium"

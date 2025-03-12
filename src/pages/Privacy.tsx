@@ -1,15 +1,46 @@
 
+import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Privacy = () => {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+    
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-dark text-white">
       <Navbar />
       
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div 
+            ref={contentRef} 
+            className="max-w-4xl mx-auto opacity-0 translate-y-10 transition-all duration-700"
+          >
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gradient-gold">Privacy Policy</h1>
             
             <div className="prose prose-invert prose-lg max-w-none">
