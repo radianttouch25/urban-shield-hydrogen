@@ -1,77 +1,14 @@
-
-import { useEffect, useRef } from 'react';
-import { Shield, Droplets, Wind, AlertTriangle } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-const pollutionData = [
-  { year: '2020', level: 30, city: 'New York' },
-  { year: '2021', level: 45, city: 'London' },
-  { year: '2022', level: 65, city: 'Tokyo' },
-  { year: '2023', level: 85, city: 'Beijing' },
-  { year: '2024', level: 95, city: 'Delhi' },
-];
-
-const features = [
-  {
-    id: 'pollution',
-    icon: <AlertTriangle className="h-8 w-8 text-rose-400" />,
-    title: 'Rising Urban Pollution',
-    description: 'Urban areas have seen a 60% increase in air pollution over the last decade.',
-    gradient: 'from-rose-500/20 via-transparent to-transparent',
-  },
-  {
-    id: 'damage',
-    icon: <Wind className="h-8 w-8 text-blue-400" />,
-    title: 'Skin Under Attack',
-    description: 'Studies show 87% of urban dwellers experience pollution-related skin issues.',
-    gradient: 'from-blue-500/20 via-transparent to-transparent',
-  },
-  {
-    id: 'protection',
-    icon: <Shield className="h-8 w-8 text-emerald-400" />,
-    title: 'Molecular Shield',
-    description: 'Our technology blocks 98% of urban pollutants while delivering key antioxidants.',
-    gradient: 'from-emerald-500/20 via-transparent to-transparent',
-  }
-];
+import React from 'react';
 
 const ProductFeatures = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    cardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
-    
-    return () => {
-      cardsRef.current.forEach((card) => {
-        if (card) observer.unobserve(card);
-      });
-    };
-  }, []);
-
   return (
-    <section id="urban-problem" className="relative py-20 bg-dark-light overflow-hidden">
+    <section id="product-features" className="relative py-20 bg-dark-light overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent"></div>
       
-      <div ref={containerRef} className="container mx-auto px-4">
+      <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
             <span className="text-gold text-sm">The Urban Skin Challenge</span>

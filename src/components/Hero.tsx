@@ -1,10 +1,13 @@
+
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Shield, Droplets, Wind } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const bottleRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,13 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToFeatures = () => {
+    const nextSection = document.getElementById('product-features');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return <div ref={heroRef} className="relative min-h-screen overflow-hidden bg-dark">
     <div className="absolute inset-0 bg-gradient-radial from-dark-light via-dark to-dark-darker opacity-80"></div>
@@ -67,14 +77,20 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
-          <a href="#preorder" className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20">
+          <Link 
+            to="/preorder" 
+            className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20"
+          >
             Pre-Order | 20% Off
             <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
+          </Link>
           
-          <a href="#invest" className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium transition-all hover:bg-white/10">
+          <Link 
+            to="/invest" 
+            className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium transition-all hover:bg-white/10"
+          >
             Investor Opportunities
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -107,12 +123,16 @@ const Hero = () => {
       </div>
     </div>
     
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fade-in-up animate-delay-500">
+    <button 
+      onClick={scrollToFeatures}
+      className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fade-in-up animate-delay-500 cursor-pointer bg-transparent border-0"
+      aria-label="Scroll to explore"
+    >
       <span className="text-sm text-gray-400 mb-2">Scroll to explore</span>
       <div className="w-6 h-10 rounded-full border-2 border-gray-400 flex justify-center pt-2">
         <div className="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce"></div>
       </div>
-    </div>
+    </button>
   </div>;
 };
 

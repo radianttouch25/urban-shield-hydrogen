@@ -8,6 +8,9 @@ import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
 import Technology from "@/pages/Technology";
 import Benefits from "@/pages/Benefits";
+import PreOrder from "@/pages/PreOrder";
+import Invest from "@/pages/Invest";
+import Shipping from "@/pages/Shipping";
 import NotFound from "@/pages/NotFound";
 import "./App.css";
 
@@ -22,6 +25,9 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/technology" element={<Technology />} />
         <Route path="/benefits" element={<Benefits />} />
+        <Route path="/preorder" element={<PreOrder />} />
+        <Route path="/invest" element={<Invest />} />
+        <Route path="/shipping" element={<Shipping />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

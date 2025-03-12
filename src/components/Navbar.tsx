@@ -63,19 +63,13 @@ const Navbar = () => {
               About
             </Link>
             <Link 
-              to="/terms" 
-              className={`text-sm font-medium ${location.pathname === '/terms' ? 'text-gold' : 'text-gray-200 hover:text-gold'} transition-colors`}
+              to="/invest" 
+              className={`text-sm font-medium ${location.pathname === '/invest' ? 'text-gold' : 'text-gray-200 hover:text-gold'} transition-colors`}
             >
-              Terms
+              Invest
             </Link>
             <Link 
-              to="/privacy" 
-              className={`text-sm font-medium ${location.pathname === '/privacy' ? 'text-gold' : 'text-gray-200 hover:text-gold'} transition-colors`}
-            >
-              Privacy
-            </Link>
-            <Link 
-              to="/#preorder" 
+              to="/preorder" 
               className="button-shine text-sm font-medium bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow"
             >
               Pre-Order
@@ -119,19 +113,13 @@ const Navbar = () => {
             About
           </Link>
           <Link 
-            to="/terms" 
-            className={`py-2 px-4 rounded-md transition-colors ${location.pathname === '/terms' ? 'text-gold' : 'text-gray-200 hover:text-gold'}`}
+            to="/invest" 
+            className={`py-2 px-4 rounded-md transition-colors ${location.pathname === '/invest' ? 'text-gold' : 'text-gray-200 hover:text-gold'}`}
           >
-            Terms
+            Invest
           </Link>
           <Link 
-            to="/privacy" 
-            className={`py-2 px-4 rounded-md transition-colors ${location.pathname === '/privacy' ? 'text-gold' : 'text-gray-200 hover:text-gold'}`}
-          >
-            Privacy
-          </Link>
-          <Link 
-            to="/#preorder" 
+            to="/preorder" 
             className="bg-gradient-gold text-dark py-2 px-4 rounded-md font-medium"
           >
             Pre-Order
@@ -141,6 +129,12 @@ const Navbar = () => {
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
           >
             Contact
+          </Link>
+          <Link 
+            to="/shipping" 
+            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
+          >
+            Shipping
           </Link>
         </div>
       </div>
