@@ -1,13 +1,15 @@
 
-import { useState } from 'react';
 import InquiryForm from './InquiryForm';
 import PreOrderFeatureList from './PreOrderFeatureList';
 import InvestorFeatureList from './InvestorFeatureList';
 import MarketChart from './MarketChart';
 
-const CTAContent = () => {
-  const [inquiryType, setInquiryType] = useState<'pre-order' | 'investor'>('pre-order');
-  
+interface CTAContentProps {
+  inquiryType: 'pre-order' | 'investor';
+  setInquiryType: (type: 'pre-order' | 'investor') => void;
+}
+
+const CTAContent = ({ inquiryType, setInquiryType }: CTAContentProps) => {
   return (
     <div>
       <div className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
@@ -23,7 +25,7 @@ const CTAContent = () => {
         Be among the first to experience Urban Shield's revolutionary anti-pollution technology. Secure your product through our exclusive pre-launch program, or explore investment opportunities in the rapidly growing skincare market.
       </p>
       
-      <InquiryForm />
+      <InquiryForm inquiryType={inquiryType} setInquiryType={setInquiryType} />
       
       {inquiryType === 'pre-order' ? <PreOrderFeatureList /> : <InvestorFeatureList />}
       

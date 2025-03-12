@@ -1,8 +1,11 @@
 
+import { useState } from 'react';
 import CTAContent from './cta/CTAContent';
 import ProductCard from './cta/ProductCard';
 
 const CTASection = () => {
+  const [inquiryType, setInquiryType] = useState<'pre-order' | 'investor'>('pre-order');
+  
   return (
     <section id="preorder" className="relative py-24 md:py-32 bg-dark overflow-hidden">
       {/* Decorative elements */}
@@ -18,7 +21,7 @@ const CTASection = () => {
             
             {/* Content */}
             <div className="order-1 lg:order-2">
-              <CTAContent />
+              <CTAContent inquiryType={inquiryType} setInquiryType={setInquiryType} />
             </div>
           </div>
         </div>
