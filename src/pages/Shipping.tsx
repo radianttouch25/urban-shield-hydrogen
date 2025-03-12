@@ -2,13 +2,14 @@
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Shipping = () => {
   return (
     <div className="min-h-screen bg-dark text-white">
       <Helmet>
-        <title>Shipping Policy | Urban Shield by Radiant Touch</title>
-        <meta name="description" content="Learn about our shipping policies, delivery timeframes, and international shipping options for Urban Shield skincare products." />
+        <title>Pre-Order Policy | Urban Shield by Radiant Touch</title>
+        <meta name="description" content="Learn about our pre-order policies, delivery timeframes, and international shipping options for Urban Shield skincare products." />
       </Helmet>
       
       <Navbar />
@@ -103,7 +104,7 @@ const Shipping = () => {
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Returns & Exchanges</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
                   <p className="mb-4">
-                    For information on returns and exchanges, please see our <a href="/terms" className="text-gold hover:underline">Return Policy</a>.
+                    For information on returns and exchanges, please see our <Link to="/terms" className="text-gold hover:underline">Return Policy</Link>.
                   </p>
                   <p>
                     If you receive a damaged item, please contact our customer service team within 48 hours of delivery at info@radianttouch.pro. Include your order number and photos of the damaged items and packaging.
@@ -127,12 +128,12 @@ const Shipping = () => {
             </div>
             
             <div className="mt-16 text-center">
-              <a 
-                href="/preorder" 
+              <Link 
+                to="/preorder" 
                 className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20 mx-auto"
               >
                 Pre-Order Now
-              </a>
+              </Link>
               <p className="text-gray-400 mt-4">
                 Secure your Urban Shield product today with our hassle-free shipping
               </p>
