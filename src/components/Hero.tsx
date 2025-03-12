@@ -1,34 +1,27 @@
-
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Shield, Droplets, Wind } from 'lucide-react';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const bottleRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current || !textRef.current || !bottleRef.current) return;
-      
       const scrollY = window.scrollY;
       const heroHeight = heroRef.current.offsetHeight;
       const scrollFactor = Math.min(scrollY / heroHeight, 1);
-      
+
       // Parallax effect for text
       textRef.current.style.transform = `translateY(${scrollFactor * 50}px)`;
       textRef.current.style.opacity = `${1 - scrollFactor}`;
-      
+
       // Parallax effect for bottle
       bottleRef.current.style.transform = `translateY(${scrollFactor * 100}px) rotate(${scrollFactor * 5}deg)`;
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  return (
-    <div ref={heroRef} className="relative min-h-screen overflow-hidden bg-dark">
+  return <div ref={heroRef} className="relative min-h-screen overflow-hidden bg-dark">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-radial from-dark-light via-dark to-dark-darker opacity-80"></div>
       
@@ -48,10 +41,7 @@ const Hero = () => {
             <span className="text-gold text-sm">Revolutionary Anti-Pollution Skincare</span>
           </div>
           
-          <h1 
-            ref={textRef}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in"
-          >
+          <h1 ref={textRef} className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-in">
             <span className="block">Urban Shield: Molecular</span>
             <span className="block text-gradient-gold">Defense Against</span>
             <span className="block">City Pollution</span>
@@ -77,36 +67,23 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
-            <a 
-              href="#preorder" 
-              className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20"
-            >
+            <a href="#preorder" className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20">
               Pre-Order | 20% Off
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             
-            <a 
-              href="#invest" 
-              className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium transition-all hover:bg-white/10"
-            >
+            <a href="#invest" className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium transition-all hover:bg-white/10">
               Investor Opportunities
             </a>
           </div>
         </div>
         
         {/* Product image with before/after overlay */}
-        <div 
-          ref={bottleRef}
-          className="w-full lg:w-1/2 relative z-10 flex justify-center lg:justify-end animate-fade-in-up animate-delay-400"
-        >
+        <div ref={bottleRef} className="w-full lg:w-1/2 relative z-10 flex justify-center lg:justify-end animate-fade-in-up animate-delay-400">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-radial from-gold/20 via-transparent to-transparent opacity-70 animate-pulse-gentle filter blur-xl"></div>
             <div className="relative">
-              <img 
-                src="/lovable-uploads/04488e94-b7fc-46c4-9760-2f2ba39b836d.png" 
-                alt="Urban Shield Skincare Product" 
-                className="w-auto h-[500px] object-contain relative animate-float"
-              />
+              <img src="/lovable-uploads/04488e94-b7fc-46c4-9760-2f2ba39b836d.png" alt="Urban Shield Skincare Product" className="w-auto h-[500px] relative animate-float object-scale-down" />
               <div className="absolute -bottom-8 left-0 right-0 bg-dark-light/80 backdrop-blur-sm p-4 rounded-lg border border-white/10">
                 <div className="flex justify-between items-center">
                   <div className="text-center">
@@ -134,8 +111,6 @@ const Hero = () => {
           <div className="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce"></div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
