@@ -30,9 +30,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="text-xl font-bold text-white"
+            className="flex items-center"
           >
-            Urban Shield
+            <span className="font-display text-gradient-gold text-2xl font-bold">URBAN SHIELD</span>
+            <span className="ml-1 text-xs text-gold-light">by Radiant Touch</span>
           </Link>
           
           {/* Desktop Navigation */}
