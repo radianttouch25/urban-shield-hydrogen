@@ -15,8 +15,8 @@ const Hero = () => {
       textRef.current.style.transform = `translateY(${scrollFactor * 50}px)`;
       textRef.current.style.opacity = `${1 - scrollFactor}`;
 
-      // Parallax effect for bottle
-      bottleRef.current.style.transform = `translateY(${scrollFactor * 100}px) rotate(${scrollFactor * 5}deg)`;
+      // Reduced movement for the bottle - no rotation, minimal vertical movement
+      bottleRef.current.style.transform = `translateY(${scrollFactor * 30}px)`;
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
