@@ -1,29 +1,29 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Star, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Star, ArrowLeft, ArrowRight, Award } from 'lucide-react';
 
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah J.',
-    role: 'Beauty Influencer',
-    content: 'Urban Shield has completely transformed my skincare routine. Living in the city, my skin used to look dull by midday, but now it stays protected and radiant all day long. The molecular shield technology is a game-changer!',
+    name: 'Dr. Sarah J.',
+    role: 'Dermatologist',
+    content: 'As a dermatologist, I\'m thoroughly impressed by the science behind Urban Shield. The molecular protection technology offers my patients superior defense against urban environmental factors. Clinical results show significant improvement in barrier function after just two weeks of use.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80'
   },
   {
     id: 2,
     name: 'Michael T.',
-    role: 'Dermatologist',
-    content: 'As a dermatologist, I\'m impressed by the science behind Urban Shield. The combination of molecular protection and smart hydration offers my patients superior defense against urban environmental factors. I recommend it to all my city-dwelling patients.',
+    role: 'Beauty Scientist',
+    content: 'Urban Shield\'s formula represents the cutting edge of anti-pollution skincare science. The combination of molecular protection and smart hydration sets a new standard in the industry. I\'ve personally observed remarkable improvements in skin clarity and texture among test subjects.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80'
   },
   {
     id: 3,
     name: 'Jennifer L.',
-    role: 'Marketing Executive',
-    content: 'My job requires long hours in polluted urban environments. Urban Shield has noticeably reduced my skin\'s stress response. My complexion is clearer, and I no longer get the dry patches I used to experience from pollution exposure.',
+    role: 'Urban Professional',
+    content: 'My job requires long hours in polluted urban environments. Urban Shield has noticeably reduced my skin\'s stress response. My complexion is clearer, and I no longer get the dry patches I used to experience from pollution exposure. It\'s become an essential part of my daily routine.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80'
   },
@@ -31,9 +31,33 @@ const testimonials = [
     id: 4,
     name: 'David K.',
     role: 'Tech Entrepreneur',
-    content: 'I was skeptical about skincare products until I tried Urban Shield. The difference is remarkable - my skin feels protected even during my commute through heavy traffic. The anti-pollution complex really works.',
+    content: 'I was skeptical about skincare products until I tried Urban Shield. The difference is remarkable - my skin feels protected even during my commute through heavy traffic. The non-greasy formula works perfectly with my minimal skincare routine, and the results are visible.',
     rating: 4,
     image: 'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80'
+  }
+];
+
+// Clinical results data
+const clinicalResults = [
+  {
+    id: 'barrier',
+    stat: '94%',
+    description: 'Improved skin barrier function within 28 days'
+  },
+  {
+    id: 'hydration',
+    stat: '87%',
+    description: 'Increased skin hydration levels for 24 hours'
+  },
+  {
+    id: 'protection',
+    stat: '98%',
+    description: 'Protection against urban pollutant particles'
+  },
+  {
+    id: 'antioxidant',
+    stat: '76%',
+    description: 'Reduction in oxidative stress markers'
   }
 ];
 
@@ -90,17 +114,30 @@ const Testimonials = () => {
       <div ref={testimonialsRef} className="container mx-auto px-4 opacity-0">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-            <span className="text-gold text-sm">Customer Experiences</span>
+            <span className="text-gold text-sm">Clinical Results & Testimonials</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-white">What People Are</span>
-            <span className="block text-gradient-gold">Saying About Us</span>
+            <span className="text-white">Proven Results For</span>
+            <span className="block text-gradient-gold">Urban Skin Protection</span>
           </h2>
           
           <p className="text-lg text-gray-300">
-            Real results from real people who've experienced the Urban Shield difference.
+            Clinically tested and recommended by dermatologists, with real results from real people who've experienced the Urban Shield difference.
           </p>
+        </div>
+        
+        {/* Clinical Results */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {clinicalResults.map((result) => (
+            <div key={result.id} className="bg-dark/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center hover-lift">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 mb-4">
+                <Award className="h-6 w-6 text-gold" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient-gold mb-2">{result.stat}</div>
+              <p className="text-sm text-gray-300">{result.description}</p>
+            </div>
+          ))}
         </div>
         
         <div className="relative max-w-5xl mx-auto">

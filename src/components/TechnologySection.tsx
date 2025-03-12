@@ -1,11 +1,12 @@
+
 import { useEffect, useRef, useState } from 'react';
-import { Shield, Droplets, Wind, Play, Pause } from 'lucide-react';
+import { Shield, Droplets, Wind, Play, Pause, Zap, Leaf } from 'lucide-react';
 
 const technologies = [
   {
     id: 'molecular',
     icon: <Shield className="h-8 w-8" />,
-    title: 'Molecular Shield',
+    title: 'Molecular Shield Technology',
     description: 'Our proprietary Molecular Shield Technology creates an invisible protective barrier on your skin that blocks pollutants, UV radiation, and other environmental toxins. The shield is breathable, allowing your skin to function naturally while providing comprehensive protection.',
     details: [
       'Nano-particle protection layer',
@@ -17,32 +18,46 @@ const technologies = [
     image: '/lovable-uploads/fe4e0f1b-21eb-4787-94ec-269344df1076.png'
   },
   {
-    id: 'hydration',
-    icon: <Droplets className="h-8 w-8" />,
-    title: 'Smart Hydration',
-    description: 'Smart Hydration technology uses hyaluronic acid microspheres that respond to your skin\'s changing moisture needs throughout the day. The responsive hydration system delivers moisture precisely when and where your skin needs it most.',
+    id: 'antioxidant',
+    icon: <Zap className="h-8 w-8" />,
+    title: 'Antioxidant Complex',
+    description: 'Our powerful blend of vitamins A, C, and E neutralizes free radicals and provides cellular protection. These antioxidants work synergistically to prevent oxidative stress caused by pollution and UV exposure, while helping repair existing damage to maintain skin\'s youthful appearance.',
     details: [
-      'Adaptive moisture delivery',
-      'Multiple hyaluronic acid weights',
-      'Deep penetrating hydration',
-      'Temperature and humidity responsive'
+      'Vitamins A, C, E complex',
+      'Free radical neutralization',
+      'Prevents cellular damage',
+      'Brightens and evens skin tone'
     ],
     color: 'silver',
     image: '/lovable-uploads/fb7a29f8-4569-4314-86c6-cb50377eff23.png'
   },
   {
-    id: 'pollution',
-    icon: <Wind className="h-8 w-8" />,
-    title: 'Anti-Pollution Complex',
-    description: 'Our Anti-Pollution Complex neutralizes free radicals and repairs existing damage caused by urban pollutants. The formula contains powerful antioxidants that protect against oxidative stress and restore your skin\'s natural defense mechanisms.',
+    id: 'barrier',
+    icon: <Droplets className="h-8 w-8" />,
+    title: 'Barrier Strengthening',
+    description: 'Our precision-engineered ceramide and peptide complex rebuilds and reinforces your skin\'s natural barrier function. These biomimetic ingredients integrate with your skin\'s structure to create a stronger defense against environmental aggressors while improving moisture retention.',
     details: [
-      'Neutralizes free radicals',
-      'Repairs cellular damage',
-      'Strengthens skin barrier',
-      'Reduces inflammation'
+      'Advanced ceramide complex',
+      'Signal peptides for repair',
+      'Strengthens skin structure',
+      'Improves moisture retention'
     ],
     color: 'rosegold',
     image: '/lovable-uploads/d1bf6ad0-0c6e-40bc-b905-2f192af5660b.png'
+  },
+  {
+    id: 'biotech',
+    icon: <Leaf className="h-8 w-8" />,
+    title: 'Pollution-Neutralizing Biotech',
+    description: 'Urban Shield utilizes cutting-edge biotechnology ingredients that actively neutralize pollution particles on contact. Our fast-absorbing, non-greasy formula creates an invisible shield that prevents pollutants from adhering to the skin while providing hydration and protection against blue light from electronic devices.',
+    details: [
+      'Active pollution neutralizers',
+      'Fast-absorbing formula',
+      'Non-greasy texture',
+      'Blue light protection'
+    ],
+    color: 'gold',
+    image: '/lovable-uploads/fe4e0f1b-21eb-4787-94ec-269344df1076.png'
   }
 ];
 
@@ -91,7 +106,7 @@ const TechnologySection = () => {
   }, []);
   
   return (
-    <section id="molecular" className="relative py-24 md:py-32 bg-dark overflow-hidden">
+    <section id="solution" className="relative py-24 md:py-32 bg-dark overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10 bg-noise mix-blend-overlay"></div>
       
@@ -102,17 +117,17 @@ const TechnologySection = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-white">Cutting-Edge</span>
-            <span className="block text-gradient-gold">Skincare Science</span>
+            <span className="text-white">The Science of Urban</span>
+            <span className="block text-gradient-gold">Skin Protection Has Evolved</span>
           </h2>
           
           <p className="text-lg text-gray-300">
-            Discover the breakthrough technologies that make Urban Shield the most advanced skincare protection system available.
+            Discover the breakthrough technologies that make Urban Shield the most advanced skincare protection system available for modern urban environments.
           </p>
         </div>
         
         {/* Tabs navigation */}
-        <div className="flex flex-wrap justify-center mb-12">
+        <div className="flex flex-wrap justify-center mb-12 overflow-x-auto">
           <div className="flex p-1 rounded-lg bg-dark-light/50 backdrop-blur-sm border border-white/5">
             {technologies.map((tech, index) => (
               <button
@@ -179,6 +194,59 @@ const TechnologySection = () => {
                 alt={technologies[activeTab].title} 
                 className="w-full h-full object-cover"
               />
+              
+              {/* Product Benefits Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark to-transparent p-4">
+                <h4 className="text-white text-sm font-medium mb-2">Key Benefits:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white">24/7 Protection</span>
+                  <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white">Fast-Absorbing</span>
+                  <span className="px-2 py-1 bg-white/10 rounded-full text-xs text-white">Non-Greasy</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Sustainability Badge */}
+            <div className="absolute -top-4 -right-4 bg-green-600/80 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
+              <Leaf className="h-3 w-3 inline-block mr-1" /> Microplastic-Free
+            </div>
+          </div>
+        </div>
+        
+        {/* Sustainability & Ethics Section */}
+        <div className="mt-20 pt-16 border-t border-white/10">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+              <span className="text-gradient-gold">Sustainability Commitment</span>
+            </h3>
+            <p className="text-gray-300">
+              Urban Shield is committed to protecting both your skin and our planet with eco-conscious formulations and sustainable practices.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-dark-light/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <Leaf className="h-10 w-10 text-green-500 mb-4" />
+              <h4 className="text-xl font-bold mb-2 text-white">Microplastic-Free</h4>
+              <p className="text-gray-300">
+                Our formulations are 100% free from microplastics and harmful synthetic polymers that contaminate waterways and marine life.
+              </p>
+            </div>
+            
+            <div className="bg-dark-light/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <Leaf className="h-10 w-10 text-green-500 mb-4" />
+              <h4 className="text-xl font-bold mb-2 text-white">Sustainable Packaging</h4>
+              <p className="text-gray-300">
+                Urban Shield uses recyclable glass bottles, FSC-certified paper, and soy-based inks to minimize environmental impact.
+              </p>
+            </div>
+            
+            <div className="bg-dark-light/30 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+              <Leaf className="h-10 w-10 text-green-500 mb-4" />
+              <h4 className="text-xl font-bold mb-2 text-white">Ethical Sourcing</h4>
+              <p className="text-gray-300">
+                We partner only with suppliers who meet our strict standards for fair labor practices and sustainable resource management.
+              </p>
             </div>
           </div>
         </div>
