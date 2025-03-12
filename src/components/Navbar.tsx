@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -27,6 +26,7 @@ const Navbar = () => {
   }, [location]);
   
   return (
+    
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'py-2 glass-dark shadow-md' : 'py-4 md:py-6 bg-transparent'
