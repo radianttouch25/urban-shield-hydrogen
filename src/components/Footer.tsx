@@ -5,13 +5,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="relative bg-dark-darker pt-20 pb-10 overflow-hidden">
+    <footer className="relative bg-dark-darker pt-16 md:pt-20 pb-10 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
       
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <div className="flex items-center mb-6">
               <span className="font-display text-gradient-gold text-2xl font-bold">URBAN SHIELD</span>
               <span className="ml-1 text-xs text-gold-light">by Radiant Touch</span>
@@ -65,22 +65,58 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-white font-medium text-lg mb-4">Quick Links</h3>
+            <h3 className="text-white font-medium text-lg mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#features" className="text-gray-400 hover:text-gold transition-colors">Technology</a>
+                <Link to="/technology" className="text-gray-400 hover:text-gold transition-colors">
+                  Technology
+                </Link>
               </li>
               <li>
-                <a href="#benefits" className="text-gray-400 hover:text-gold transition-colors">Benefits</a>
+                <Link to="/benefits" className="text-gray-400 hover:text-gold transition-colors">
+                  Benefits
+                </Link>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-gold transition-colors">Testimonials</a>
+                <Link to="/#testimonials" className="text-gray-400 hover:text-gold transition-colors">
+                  Testimonials
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-gold transition-colors">About</a>
+                <Link to="/#preorder" className="text-gray-400 hover:text-gold transition-colors">
+                  Pre-Order
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-gold transition-colors">Contact</a>
+                <Link to="/#invest" className="text-gray-400 hover:text-gold transition-colors">
+                  Invest
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-medium text-lg mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-gold transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-400 hover:text-gold transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
+                  Press
+                </a>
               </li>
             </ul>
           </div>
@@ -89,16 +125,24 @@ const Footer = () => {
             <h3 className="text-white font-medium text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/privacy" className="text-gray-400 hover:text-gold transition-colors">Privacy Policy</Link>
+                <Link to="/privacy" className="text-gray-400 hover:text-gold transition-colors">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-gray-400 hover:text-gold transition-colors">Terms of Service</Link>
+                <Link to="/terms" className="text-gray-400 hover:text-gold transition-colors">
+                  Terms of Service
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-gold transition-colors">Shipping Policy</a>
+                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
+                  Shipping Policy
+                </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-gold transition-colors">Return Policy</a>
+                <a href="#" className="text-gray-400 hover:text-gold transition-colors">
+                  Return Policy
+                </a>
               </li>
             </ul>
           </div>
