@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,15 +32,17 @@ const Navbar = () => {
             to="/" 
             className="flex items-center"
           >
-            <span className="font-display text-gradient-gold text-2xl font-bold">URBAN SHIELD</span>
-            <span className="ml-1 text-xs text-gold-light">by Radiant Touch</span>
+            <img 
+              src="/lovable-uploads/d926396f-8e77-4f5d-9d84-c626235ee99e.png" 
+              alt="Radiant Touch" 
+              className="h-10 md:h-12" 
+            />
           </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#technology-section" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Technology</a>
             <a href="#urban-problem" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Benefits</a>
-            <a href="#testimonials" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Testimonials</a>
             <a href="#sustainability" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">About</a>
             <Link to="/contact" className="button-shine text-sm font-medium bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow">
               Pre-Order
@@ -78,13 +80,6 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Benefits
-          </a>
-          <a 
-            href="#testimonials" 
-            className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Testimonials
           </a>
           <a 
             href="#sustainability" 
