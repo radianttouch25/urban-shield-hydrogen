@@ -1,6 +1,81 @@
-import React from 'react';
+
+import React, { useRef, useEffect } from 'react';
+import { ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Line } from 'recharts';
+import { Shield, Wind, Droplets, Zap } from 'lucide-react';
+
+// Sample pollution data for the chart
+const pollutionData = [
+  { year: '2010', level: 14 },
+  { year: '2012', level: 18 },
+  { year: '2014', level: 23 },
+  { year: '2016', level: 29 },
+  { year: '2018', level: 34 },
+  { year: '2020', level: 38 },
+  { year: '2022', level: 42 },
+  { year: '2024', level: 45 },
+];
+
+// Feature data
+const features = [
+  {
+    id: 'molecular-shield',
+    title: 'Molecular Shield Technology',
+    description: 'Creates an invisible barrier that blocks up to 98% of urban pollutants from reaching your skin.',
+    icon: <Shield className="w-8 h-8 text-gold" />,
+    gradient: 'from-gold/5 to-transparent'
+  },
+  {
+    id: 'pollution-defense',
+    title: 'Active Pollution Defense',
+    description: 'Neutralizes free radicals and environmental toxins before they can damage skin cells.',
+    icon: <Wind className="w-8 h-8 text-gold" />,
+    gradient: 'from-gold/5 to-transparent'
+  },
+  {
+    id: 'hydration-lock',
+    title: 'Hydration Lock System',
+    description: 'Maintains optimal moisture levels throughout the day, even in harsh urban environments.',
+    icon: <Droplets className="w-8 h-8 text-gold" />,
+    gradient: 'from-gold/5 to-transparent'
+  },
+  {
+    id: 'adaptive-response',
+    title: 'Adaptive Response',
+    description: 'Intelligent formula that adjusts protection based on environmental stress factors.',
+    icon: <Zap className="w-8 h-8 text-gold" />,
+    gradient: 'from-gold/5 to-transparent'
+  }
+];
 
 const ProductFeatures = () => {
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  
+  useEffect(() => {
+    // Add animation for cards on load
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => {
+      cardsRef.current.forEach((card) => {
+        if (card) observer.unobserve(card);
+      });
+    };
+  }, []);
+
   return (
     <section id="product-features" className="relative py-20 bg-dark-light overflow-hidden">
       {/* Background decorations */}
