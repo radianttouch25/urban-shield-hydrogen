@@ -1,12 +1,11 @@
-
 import { useEffect, useRef } from 'react';
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Shield, Clock, Droplets, Sun, Feather, Heart } from 'lucide-react';
+import { Shield, Clock, Droplets, Sun, Feather, Heart, Check } from 'lucide-react';
 
 const Benefits = () => {
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

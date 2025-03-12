@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Helmet } from "react-helmet";
 import Navbar from "@/components/Navbar";
@@ -6,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Check, Zap, Shield, Sparkles, Droplets, Beaker } from 'lucide-react';
 
 const Technology = () => {
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
