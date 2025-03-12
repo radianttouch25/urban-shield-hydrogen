@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -153,7 +152,13 @@ const Footer = () => {
             &copy; {currentYear} Radiant Touch LIMITED. All rights reserved.
           </p>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
+            <div className="text-gray-500 text-sm">
+              <a href="mailto:info@radianttouch.pro" className="hover:text-gold">info@radianttouch.pro</a>
+            </div>
+            <div className="text-gray-500 text-sm">
+              <a href="tel:+447459394987" className="hover:text-gold">+44 7459 394987</a>
+            </div>
             <img 
               src="/lovable-uploads/fb7a29f8-4569-4314-86c6-cb50377eff23.png" 
               alt="Radiant Touch Logo" 

@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -14,7 +13,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import PreOrderFeatureList from "@/components/cta/PreOrderFeatureList";
 
-// Form validation schema
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -29,7 +27,6 @@ type FormValues = z.infer<typeof formSchema>;
 const PreOrder = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,22 +39,13 @@ const PreOrder = () => {
     },
   });
 
-  // Form submission handler
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call
     try {
-      // In a real application, you would send this data to your backend
       console.log("Form data:", data);
-      
-      // Simulate network delay
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Show success message
       toast.success("Pre-order submitted successfully! We'll contact you soon with payment details.");
-      
-      // Reset form
       form.reset();
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
@@ -119,7 +107,7 @@ const PreOrder = () => {
                   <div className="mt-6 pt-6 border-t border-white/10">
                     <div className="flex justify-between text-sm mb-2">
                       <span className="text-gray-300">Estimated Shipping:</span>
-                      <span>Early June 2023</span>
+                      <span>Early June 2025</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-300">Payment:</span>

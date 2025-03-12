@@ -69,8 +69,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-dark text-white">
       <Helmet>
-        <title>Pre-Order Urban Shield | Radiant Touch</title>
-        <meta name="description" content="Pre-order Urban Shield, the revolutionary anti-pollution skincare product by Radiant Touch. Secure your product before the official launch." />
+        <title>Contact Urban Shield | Radiant Touch</title>
+        <meta name="description" content="Contact Radiant Touch about Urban Shield, the revolutionary anti-pollution skincare product." />
       </Helmet>
       
       <Navbar />
@@ -80,11 +80,11 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-white">Pre-Order</span>
+                <span className="text-white">Contact</span>
                 <span className="block text-gradient-gold">Urban Shield</span>
               </h1>
               <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                Be among the first to experience revolutionary anti-pollution protection for your skin. Fill out the form below to secure your pre-order.
+                Have questions about Urban Shield? Get in touch with our team. Fill out the form below to contact us.
               </p>
             </div>
             
@@ -229,11 +229,11 @@ const Contact = () => {
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <div className="mr-3 mt-1 text-gold">✦</div>
-                    <p>20% discount off the regular retail price</p>
+                    <p>42% discount off the regular retail price</p>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-3 mt-1 text-gold">✦</div>
-                    <p>Priority shipping when product launches</p>
+                    <p>Priority shipping when product launches in June 2025</p>
                   </li>
                   <li className="flex items-start">
                     <div className="mr-3 mt-1 text-gold">✦</div>
@@ -247,15 +247,38 @@ const Contact = () => {
               </div>
               
               <div className="bg-dark-light rounded-xl p-6 border border-white/10">
-                <h2 className="text-xl font-bold mb-4 text-gradient-gold">Investor Information</h2>
-                <p className="mb-4">Interested in investment opportunities with Radiant Touch LIMITED?</p>
-                <p className="mb-6">Our anti-pollution skincare technology represents a significant opportunity in the $240B global skincare market.</p>
-                <a 
-                  href="mailto:investors@radianttouch.com" 
-                  className="inline-block button-shine bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow"
-                >
-                  Contact Investor Relations
-                </a>
+                <h2 className="text-xl font-bold mb-4 text-gradient-gold">Contact Information</h2>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="mr-3 text-gold">✉</div>
+                    <div>
+                      <p className="text-gray-300 text-sm">Email</p>
+                      <a href="mailto:info@radianttouch.pro" className="text-white hover:text-gold">info@radianttouch.pro</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-3 text-gold">☎</div>
+                    <div>
+                      <p className="text-gray-300 text-sm">Phone</p>
+                      <a href="tel:+447459394987" className="text-white hover:text-gold">+44 7459 394987</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="mr-3 text-gold">⏱</div>
+                    <div>
+                      <p className="text-gray-300 text-sm">Business Hours</p>
+                      <p className="text-white">Monday-Friday: 9am-5pm GMT</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <a 
+                    href="mailto:investors@radianttouch.pro" 
+                    className="inline-block button-shine bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow"
+                  >
+                    Contact Investor Relations
+                  </a>
+                </div>
               </div>
             </div>
           </div>

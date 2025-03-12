@@ -18,11 +18,11 @@ const Shipping = () => {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-white">Shipping</span>
+                <span className="text-white">Pre-Order</span>
                 <span className="block text-gradient-gold">Policy</span>
               </h1>
               <p className="text-gray-300 text-lg">
-                Information about shipping methods, delivery timeframes, and international orders.
+                Information about pre-orders, delivery timeframes, and international orders.
               </p>
             </div>
             
@@ -34,7 +34,7 @@ const Shipping = () => {
                     All orders are processed within 1-2 business days (excluding weekends and holidays) after receiving your order confirmation email. You will receive another notification when your order has shipped.
                   </p>
                   <p>
-                    For pre-orders specifically: Your pre-order will be processed as a priority when products become available, typically 2-3 weeks before general release. You will receive an email notification before your pre-order ships.
+                    For pre-orders specifically: Your pre-order will be processed as a priority when products become available, with estimated shipping in Early June 2025. You will receive an email notification before your pre-order ships.
                   </p>
                 </div>
               </section>
@@ -44,21 +44,21 @@ const Shipping = () => {
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-bold mb-2">Domestic Shipping (United States)</h3>
+                      <h3 className="font-bold mb-2">UK Shipping</h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-300">
-                        <li>Standard Shipping (Free on orders over $75): 3-5 business days</li>
-                        <li>Expedited Shipping ($12.95): 2-3 business days</li>
-                        <li>Priority Shipping ($24.95): 1-2 business days</li>
+                        <li>Standard Shipping (Free on orders over £50): 3-5 business days</li>
+                        <li>Expedited Shipping (£8.95): 2-3 business days</li>
+                        <li>Priority Shipping (£14.95): 1-2 business days</li>
                       </ul>
                     </div>
                     
                     <div>
                       <h3 className="font-bold mb-2">International Shipping</h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-300">
-                        <li>Canada & Mexico: 5-7 business days ($15.95)</li>
-                        <li>Europe: 7-10 business days ($24.95)</li>
-                        <li>Asia & Australia: 10-14 business days ($29.95)</li>
-                        <li>Rest of World: 14-21 business days ($34.95)</li>
+                        <li>Europe: 5-7 business days (£12.95)</li>
+                        <li>North America: 7-10 business days (£18.95)</li>
+                        <li>Asia & Australia: 10-14 business days (£22.95)</li>
+                        <li>Rest of World: 14-21 business days (£27.95)</li>
                       </ul>
                       <p className="mt-3 text-sm">
                         Please note that international customers may be subject to customs fees and import duties upon delivery. These fees are not included in the shipping cost and are the responsibility of the customer.
@@ -75,7 +75,7 @@ const Shipping = () => {
                     You will receive a shipping confirmation email with a tracking number once your order has shipped. You can use this tracking number to follow your package's journey via our website or the carrier's website.
                   </p>
                   <p>
-                    If you haven't received tracking information within 3 business days after your order confirmation, please contact our customer service team at support@radianttouch.com.
+                    If you haven't received tracking information within 3 business days after your order confirmation, please contact our customer service team at info@radianttouch.pro.
                   </p>
                 </div>
               </section>
@@ -103,10 +103,10 @@ const Shipping = () => {
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Returns & Exchanges</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
                   <p className="mb-4">
-                    For information on returns and exchanges, please see our <a href="#" className="text-gold hover:underline">Return Policy</a>.
+                    For information on returns and exchanges, please see our <a href="/terms" className="text-gold hover:underline">Return Policy</a>.
                   </p>
                   <p>
-                    If you receive a damaged item, please contact our customer service team within 48 hours of delivery at support@radianttouch.com. Include your order number and photos of the damaged items and packaging.
+                    If you receive a damaged item, please contact our customer service team within 48 hours of delivery at info@radianttouch.pro. Include your order number and photos of the damaged items and packaging.
                   </p>
                 </div>
               </section>
@@ -115,12 +115,12 @@ const Shipping = () => {
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Contact Us</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
                   <p className="mb-4">
-                    If you have any questions about our shipping policy, please contact us:
+                    If you have any questions about our pre-order policy, please contact us:
                   </p>
                   <ul className="list-disc pl-5 space-y-2 text-gray-300">
-                    <li>Email: shipping@radianttouch.com</li>
-                    <li>Phone: +1 (800) 555-1234</li>
-                    <li>Hours: Monday-Friday, 9am-5pm EST</li>
+                    <li>Email: info@radianttouch.pro</li>
+                    <li>Phone: +447459394987</li>
+                    <li>Hours: Monday-Friday, 9am-5pm GMT</li>
                   </ul>
                 </div>
               </section>
