@@ -1,7 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Shield, Droplets, Wind, Play, Pause, Zap, Leaf } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const technologies = [
   {
@@ -200,16 +199,16 @@ const TechnologySection = () => {
               ))}
             </ul>
             
-            <Link 
-              to="/contact" 
+            <a 
+              href="#contact" 
               className={`inline-flex items-center px-6 py-3 rounded-md bg-${technologies[activeTab].color} text-dark font-medium transition-all hover:shadow-lg button-shine`}
               style={{backgroundColor: `var(--${technologies[activeTab].color}, #D4AF37)`}}
             >
-              Pre-Order Now
+              Learn More
               <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </Link>
+            </a>
           </div>
           
           {/* Image/Video */}

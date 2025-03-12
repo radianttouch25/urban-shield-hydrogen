@@ -45,14 +45,6 @@
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 15%;
     --sidebar-ring: 47 65% 52%;
-    
-    /* Color variables */
-    --gold: #D4AF37;
-    --silver: #C0C0C0;
-    --rosegold: #B76E79;
-    --dark: #121212;
-    --dark-light: #1A1A1A;
-    --dark-darker: #0A0A0A;
   }
 }
 
@@ -165,51 +157,6 @@
     left: 120%;
     transition: all 0.5s;
   }
-  
-  /* Animation for smooth fade-in-up elements */
-  .animate-fade-in-up {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Animation for floating elements */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  
-  /* Animation for gentle pulsing */
-  .animate-pulse-gentle {
-    animation: pulseGentle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  @keyframes pulseGentle {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
 }
 
 /* Custom scrollbar */
@@ -234,48 +181,4 @@
 /* Smooth scrolling for the whole page */
 html {
   scroll-behavior: smooth;
-}
-
-/* Active navigation link styles */
-.active-nav-link {
-  @apply text-gold border-b-2 border-gold;
-}
-
-/* Gradient backgrounds */
-.bg-gradient-gold {
-  background: linear-gradient(to right, #D4AF37, #FBE383, #D4AF37);
-}
-
-.bg-gradient-silver {
-  background: linear-gradient(to right, #C0C0C0, #E8E8E8, #C0C0C0);
-}
-
-.bg-gradient-rosegold {
-  background: linear-gradient(to right, #B76E79, #EABBC0, #B76E79);
-}
-
-.bg-gradient-radial {
-  background: radial-gradient(circle, var(--from-color, rgba(255,255,255,0.1)) 0%, var(--via-color, rgba(255,255,255,0.05)) 50%, var(--to-color, rgba(255,255,255,0)) 100%);
-}
-
-/* Added animations for react components */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Utility class for anchor links with offset for fixed header */
-.anchor-link {
-  display: block;
-  position: relative;
-  top: -80px;
-  visibility: hidden;
 }

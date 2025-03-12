@@ -1,8 +1,5 @@
 
 import { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
   sectionRef: (el: HTMLDivElement | null) => void;
@@ -29,24 +26,6 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
           <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
             Founded with a mission to protect urban skin from increasing environmental threats, Radiant Touch LIMITED is leading the cosmeceutical revolution with our breakthrough Urban Shield technology.
           </p>
-          
-          <div className="flex justify-center mb-10">
-            <Button asChild className="bg-gradient-gold text-dark hover:shadow-lg button-shine mr-4">
-              <Link to="/contact">
-                Pre-Order Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            
-            <Button variant="outline" asChild className="border-white/10 hover:bg-white/5">
-              <a href="#team" onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#team')?.scrollIntoView({ behavior: 'smooth' });
-              }}>
-                Meet Our Team
-              </a>
-            </Button>
-          </div>
           
           <div className="relative inline-block">
             <img 

@@ -1,13 +1,9 @@
-
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Shield, Droplets, Wind } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const bottleRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current || !textRef.current || !bottleRef.current) return;
@@ -22,20 +18,10 @@ const Hero = () => {
       // Reduced movement for the bottle - no rotation, minimal vertical movement
       bottleRef.current.style.transform = `translateY(${scrollFactor * 30}px)`;
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  
-  return (
-    <div ref={heroRef} className="relative min-h-screen overflow-hidden bg-dark">
+  return <div ref={heroRef} className="relative min-h-screen overflow-hidden bg-dark">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-radial from-dark-light via-dark to-dark-darker opacity-80"></div>
       
@@ -81,20 +67,14 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
-            <Link 
-              to="/contact" 
-              className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20"
-            >
+            <a href="#preorder" className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20">
               Pre-Order | 20% Off
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
             
-            <button
-              onClick={() => scrollToSection('technology-section')}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium transition-all hover:bg-white/10"
-            >
-              Learn About Technology
-            </button>
+            <a href="#invest" className="inline-flex items-center justify-center px-8 py-3 rounded-md bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium transition-all hover:bg-white/10">
+              Investor Opportunities
+            </a>
           </div>
         </div>
         
@@ -126,18 +106,11 @@ const Hero = () => {
       
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fade-in-up animate-delay-500">
-        <button 
-          onClick={() => scrollToSection('urban-problem')}
-          className="text-sm text-gray-400 hover:text-white transition-colors flex flex-col items-center"
-        >
-          <span className="mb-2">Scroll to explore</span>
-          <div className="w-6 h-10 rounded-full border-2 border-gray-400 flex justify-center pt-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce"></div>
-          </div>
-        </button>
+        <span className="text-sm text-gray-400 mb-2">Scroll to explore</span>
+        <div className="w-6 h-10 rounded-full border-2 border-gray-400 flex justify-center pt-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce"></div>
+        </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
