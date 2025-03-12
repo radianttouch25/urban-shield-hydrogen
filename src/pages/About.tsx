@@ -9,7 +9,7 @@ import JourneySection from "@/components/about/JourneySection";
 import TeamSection from "@/components/about/TeamSection";
 
 const About = () => {
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,16 +46,22 @@ const About = () => {
       <Navbar />
       
       <main className="pt-32 pb-20">
+        {/* Hidden anchor links for direct navigation */}
+        <div id="about" className="anchor-link"></div>
+        
         {/* Hero section */}
         <HeroSection sectionRef={el => (sectionsRef.current[0] = el)} />
         
         {/* Mission and values */}
+        <div id="mission" className="anchor-link"></div>
         <MissionSection sectionRef={el => (sectionsRef.current[1] = el)} />
         
         {/* Our journey */}
+        <div id="journey" className="anchor-link"></div>
         <JourneySection sectionRef={el => (sectionsRef.current[2] = el)} />
         
         {/* Team section */}
+        <div id="team" className="anchor-link"></div>
         <TeamSection sectionRef={el => (sectionsRef.current[3] = el)} />
       </main>
       

@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Shield, Droplets, Wind, AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -9,6 +10,7 @@ const features = [
     title: 'Rising Urban Pollution',
     description: 'Urban areas have seen a 60% increase in air pollution over the last decade, with microscopic particles that penetrate and damage skin cells, accelerating aging by up to 20%.',
     gradient: 'from-gold/20 via-transparent to-transparent',
+    link: '/contact'
   },
   {
     id: 'damage',
@@ -16,6 +18,7 @@ const features = [
     title: 'Skin Under Attack',
     description: 'Conventional skincare fails to address urban-specific challenges, with studies showing 87% of urban dwellers experience pollution-related skin issues like hyperpigmentation and dryness.',
     gradient: 'from-silver/20 via-transparent to-transparent',
+    link: '/contact'
   },
   {
     id: 'protection',
@@ -23,6 +26,7 @@ const features = [
     title: 'Molecular Shield',
     description: 'Our proprietary technology creates a breathable barrier that blocks 98% of urban pollutants while delivering key antioxidants, ceramides, and peptides to repair and strengthen skin.',
     gradient: 'from-rosegold/20 via-transparent to-transparent',
+    link: '/contact'
   }
 ];
 
@@ -139,15 +143,15 @@ const ProductFeatures = () => {
                 </p>
                 
                 <div className="mt-6 pt-6 border-t border-white/10">
-                  <a 
-                    href={`#${feature.id}`} 
+                  <Link 
+                    to={feature.link}
                     className="inline-flex items-center text-sm font-medium text-gold hover:text-gold-light transition-colors"
                   >
                     Learn more
                     <svg className="w-4 h-4 ml-2 group-hover:ml-3 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

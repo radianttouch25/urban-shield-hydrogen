@@ -2,6 +2,7 @@
 import { forwardRef } from 'react';
 import { Linkedin, Mail } from 'lucide-react';
 import { Button } from '../ui/button';
+import { Link } from 'react-router-dom';
 
 interface TeamSectionProps {
   sectionRef: (el: HTMLDivElement | null) => void;
@@ -26,7 +27,7 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Team member cards */}
-            <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
+            <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover-lift">
               <div className="aspect-square relative overflow-hidden">
                 <img 
                   src="/lovable-uploads/04488e94-b7fc-46c4-9760-2f2ba39b836d.png" 
@@ -46,15 +47,17 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
                     <Linkedin size={16} className="mr-1" />
                     LinkedIn
                   </Button>
-                  <Button size="sm" variant="outline" className="bg-dark/50 hover:bg-dark">
-                    <Mail size={16} className="mr-1" />
-                    Contact
+                  <Button asChild size="sm" variant="outline" className="bg-dark/50 hover:bg-dark">
+                    <a href="mailto:elizabeth.chen@urbanshield.com">
+                      <Mail size={16} className="mr-1" />
+                      Contact
+                    </a>
                   </Button>
                 </div>
               </div>
             </div>
             
-            <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
+            <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover-lift">
               <div className="aspect-square relative overflow-hidden">
                 <img 
                   src="/lovable-uploads/d926396f-8e77-4f5d-9d84-c626235ee99e.png" 
@@ -74,15 +77,17 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
                     <Linkedin size={16} className="mr-1" />
                     LinkedIn
                   </Button>
-                  <Button size="sm" variant="outline" className="bg-dark/50 hover:bg-dark">
-                    <Mail size={16} className="mr-1" />
-                    Contact
+                  <Button asChild size="sm" variant="outline" className="bg-dark/50 hover:bg-dark">
+                    <a href="mailto:marcus.reynolds@urbanshield.com">
+                      <Mail size={16} className="mr-1" />
+                      Contact
+                    </a>
                   </Button>
                 </div>
               </div>
             </div>
             
-            <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
+            <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover-lift">
               <div className="aspect-square relative overflow-hidden">
                 <img 
                   src="/lovable-uploads/fb7a29f8-4569-4314-86c6-cb50377eff23.png" 
@@ -102,9 +107,11 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
                     <Linkedin size={16} className="mr-1" />
                     LinkedIn
                   </Button>
-                  <Button size="sm" variant="outline" className="bg-dark/50 hover:bg-dark">
-                    <Mail size={16} className="mr-1" />
-                    Contact
+                  <Button asChild size="sm" variant="outline" className="bg-dark/50 hover:bg-dark">
+                    <a href="mailto:aisha.khatri@urbanshield.com">
+                      <Mail size={16} className="mr-1" />
+                      Contact
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -115,9 +122,11 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
             <p className="text-xl text-gray-300 mb-6">
               Interested in joining our team?
             </p>
-            <Button className="bg-gradient-gold text-dark hover:shadow-lg transition-shadow">
-              <Mail className="mr-2 h-5 w-5" />
-              View Open Positions
+            <Button asChild className="bg-gradient-gold text-dark hover:shadow-lg transition-shadow">
+              <Link to="/contact">
+                <Mail className="mr-2 h-5 w-5" />
+                View Open Positions
+              </Link>
             </Button>
           </div>
         </div>
