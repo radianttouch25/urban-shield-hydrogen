@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -32,7 +33,10 @@ const Terms = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark text-white">
+    <div className="min-h-screen bg-dark text-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
+      
       <Helmet>
         <title>Terms of Service | Urban Shield</title>
         <meta name="description" content="Terms of Service for Radiant Touch LIMITED and Urban Shield products." />
@@ -40,7 +44,7 @@ const Terms = () => {
       
       <Navbar />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <div className="container mx-auto px-4">
           <div 
             ref={contentRef} 

@@ -40,7 +40,10 @@ const Benefits = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark text-white">
+    <div className="min-h-screen bg-dark text-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
+      
       <Helmet>
         <title>Benefits | Urban Shield</title>
         <meta name="description" content="Discover the benefits of Urban Shield's revolutionary anti-pollution skincare technology for healthier, more radiant skin in urban environments." />
@@ -48,7 +51,7 @@ const Benefits = () => {
       
       <Navbar />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         {/* Hero Section */}
         <HeroSection ref={(el) => (sectionsRef.current[0] = el)} />
         

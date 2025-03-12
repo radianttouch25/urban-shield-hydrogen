@@ -9,7 +9,10 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-dark text-white">
+    <div className="min-h-screen bg-dark text-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
+      
       <Helmet>
         <title>Urban Shield | Revolutionary Anti-Pollution Skincare Technology</title>
         <meta name="description" content="Urban Shield creates an invisible protective barrier against pollution, UV rays, and environmental stressors with advanced Molecular Shield Technology. Discover the science behind our anti-pollution skincare." />

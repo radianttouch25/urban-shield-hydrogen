@@ -39,7 +39,10 @@ const Technology = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark text-white">
+    <div className="min-h-screen bg-dark text-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
+      
       <Helmet>
         <title>Technology | Urban Shield</title>
         <meta name="description" content="Discover how Urban Shield's revolutionary anti-pollution technology creates an invisible barrier against environmental stressors for healthier, more radiant skin." />
@@ -47,7 +50,7 @@ const Technology = () => {
       
       <Navbar />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <HeroSection ref={el => (sectionsRef.current[0] = el)} />
         <HowItWorksSection ref={el => (sectionsRef.current[1] = el)} />
         <KeyComponentsSection ref={el => (sectionsRef.current[2] = el)} />
