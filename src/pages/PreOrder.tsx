@@ -106,9 +106,9 @@ const PreOrder = () => {
                       <h3 className="font-bold">Urban Shield Anti-Pollution Serum</h3>
                       <p className="text-gray-300 text-sm mb-1">50ml / 1.7 fl oz</p>
                       <div className="flex items-center gap-2">
-                        <span className="text-gold font-bold">$89.00</span>
-                        <span className="text-gray-400 line-through text-sm">$109.00</span>
-                        <span className="bg-gold/20 text-gold text-xs px-2 py-0.5 rounded">Save 20%</span>
+                        <span className="text-gold font-bold">£34.99</span>
+                        <span className="text-gray-400 line-through text-sm">£59.99</span>
+                        <span className="bg-gold/20 text-gold text-xs px-2 py-0.5 rounded">Save 42%</span>
                       </div>
                     </div>
                   </div>
@@ -135,12 +135,12 @@ const PreOrder = () => {
                   
                   <div className="flex justify-between mb-3">
                     <span className="text-gray-300">Product Price</span>
-                    <span>$109.00</span>
+                    <span>£59.99</span>
                   </div>
                   
                   <div className="flex justify-between mb-3">
                     <span className="text-gray-300">Pre-Order Discount</span>
-                    <span className="text-gold">-$20.00</span>
+                    <span className="text-gold">-£25.00</span>
                   </div>
                   
                   <div className="flex justify-between mb-3 pb-3 border-b border-white/10">
@@ -150,7 +150,7 @@ const PreOrder = () => {
                   
                   <div className="flex justify-between font-bold text-lg mt-3">
                     <span>Total</span>
-                    <span>$89.00</span>
+                    <span>£34.99</span>
                   </div>
                   
                   <div className="flex justify-center mt-8">

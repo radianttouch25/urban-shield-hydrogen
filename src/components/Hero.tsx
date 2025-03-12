@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Shield, Droplets, Wind } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -81,7 +82,7 @@ const Hero = () => {
               to="/preorder" 
               className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20"
             >
-              Pre-Order | 20% Off
+              Pre-Order | 42% Off
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             

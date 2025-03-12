@@ -14,8 +14,8 @@ const ProductCard = () => {
           <div>
             <p className="text-xs text-gray-400">Launch Price</p>
             <div className="flex items-end">
-              <span className="text-lg font-bold text-gold">$89</span>
-              <span className="text-xs text-gray-400 ml-1 line-through">$110</span>
+              <span className="text-lg font-bold text-gold">£34.99</span>
+              <span className="text-xs text-gray-400 ml-1 line-through">£59.99</span>
             </div>
           </div>
           <div>
@@ -23,7 +23,7 @@ const ProductCard = () => {
             <p className="text-sm font-medium text-white">March 31, 2025</p>
           </div>
           <div className="bg-gold/20 px-3 py-1 rounded-full">
-            <span className="text-xs font-medium text-gold">20% OFF</span>
+            <span className="text-xs font-medium text-gold">42% OFF</span>
           </div>
         </div>
       </div>
