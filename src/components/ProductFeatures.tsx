@@ -56,7 +56,7 @@ const ProductFeatures = () => {
   }, []);
 
   return (
-    <section id="urban-problem" className="relative py-20 md:py-32 bg-dark-light overflow-hidden">
+    <section id="urban-problem" className="relative py-20 bg-dark-light overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent"></div>

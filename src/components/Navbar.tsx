@@ -38,10 +38,10 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Technology</a>
-            <a href="#benefits" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Benefits</a>
+            <a href="#technology-section" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Technology</a>
+            <a href="#urban-problem" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Benefits</a>
             <a href="#testimonials" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">Testimonials</a>
-            <a href="#about" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">About</a>
+            <a href="#sustainability" className="text-sm font-medium text-gray-200 hover:text-gold transition-colors">About</a>
             <Link to="/contact" className="button-shine text-sm font-medium bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow">
               Pre-Order
             </Link>
@@ -66,14 +66,14 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 flex flex-col space-y-4">
           <a 
-            href="#features" 
+            href="#technology-section" 
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Technology
           </a>
           <a 
-            href="#benefits" 
+            href="#urban-problem" 
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -87,7 +87,7 @@ const Navbar = () => {
             Testimonials
           </a>
           <a 
-            href="#about" 
+            href="#sustainability" 
             className="text-gray-200 hover:text-gold py-2 px-4 rounded-md transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
