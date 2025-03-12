@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import { Shield, Leaf, Zap } from 'lucide-react';
 
 const About = () => {
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  // Update the ref type to be more generic to match what's being assigned
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
