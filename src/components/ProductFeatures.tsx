@@ -1,28 +1,37 @@
 
 import { useEffect, useRef } from 'react';
 import { Shield, Droplets, Wind, AlertTriangle } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+const pollutionData = [
+  { year: '2020', level: 30, city: 'New York' },
+  { year: '2021', level: 45, city: 'London' },
+  { year: '2022', level: 65, city: 'Tokyo' },
+  { year: '2023', level: 85, city: 'Beijing' },
+  { year: '2024', level: 95, city: 'Delhi' },
+];
 
 const features = [
   {
     id: 'pollution',
-    icon: <AlertTriangle className="h-8 w-8 text-gold" />,
+    icon: <AlertTriangle className="h-8 w-8 text-rose-400" />,
     title: 'Rising Urban Pollution',
-    description: 'Urban areas have seen a 60% increase in air pollution over the last decade, with microscopic particles that penetrate and damage skin cells, accelerating aging by up to 20%.',
-    gradient: 'from-gold/20 via-transparent to-transparent',
+    description: 'Urban areas have seen a 60% increase in air pollution over the last decade.',
+    gradient: 'from-rose-500/20 via-transparent to-transparent',
   },
   {
     id: 'damage',
-    icon: <Wind className="h-8 w-8 text-silver" />,
+    icon: <Wind className="h-8 w-8 text-blue-400" />,
     title: 'Skin Under Attack',
-    description: 'Conventional skincare fails to address urban-specific challenges, with studies showing 87% of urban dwellers experience pollution-related skin issues like hyperpigmentation and dryness.',
-    gradient: 'from-silver/20 via-transparent to-transparent',
+    description: 'Studies show 87% of urban dwellers experience pollution-related skin issues.',
+    gradient: 'from-blue-500/20 via-transparent to-transparent',
   },
   {
     id: 'protection',
-    icon: <Shield className="h-8 w-8 text-rosegold" />,
+    icon: <Shield className="h-8 w-8 text-emerald-400" />,
     title: 'Molecular Shield',
-    description: 'Our proprietary technology creates a breathable barrier that blocks 98% of urban pollutants while delivering key antioxidants, ceramides, and peptides to repair and strengthen skin.',
-    gradient: 'from-rosegold/20 via-transparent to-transparent',
+    description: 'Our technology blocks 98% of urban pollutants while delivering key antioxidants.',
+    gradient: 'from-emerald-500/20 via-transparent to-transparent',
   }
 ];
 
@@ -57,7 +66,7 @@ const ProductFeatures = () => {
 
   return (
     <section id="urban-problem" className="relative py-20 bg-dark-light overflow-hidden">
-      {/* Background decoration */}
+      {/* Background decorations */}
       <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent"></div>
@@ -73,58 +82,59 @@ const ProductFeatures = () => {
             <span className="block text-white">Invisible Urban Enemies</span>
           </h2>
           
-          <p className="text-lg text-gray-300 mb-8">
-            Modern urban environments expose your skin to unprecedented levels of pollution and stress. Conventional skincare is no longer enough.
+          <p className="text-lg text-gray-300 mb-12">
+            Modern urban environments expose your skin to unprecedented levels of pollution and stress.
           </p>
           
-          {/* Pollution Visualization */}
-          <div className="bg-dark/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 mb-12">
-            <h3 className="text-xl font-medium mb-4 text-white">Air Pollution in Major Cities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end h-48">
-              <div className="flex flex-col items-center">
-                <div className="h-[30%] w-full bg-gradient-to-t from-green-400/70 to-green-400/20 rounded-t-md relative">
-                  <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">30%</span>
-                </div>
-                <span className="text-xs mt-2 text-gray-400">1990</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="h-[45%] w-full bg-gradient-to-t from-yellow-400/70 to-yellow-400/20 rounded-t-md relative">
-                  <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">45%</span>
-                </div>
-                <span className="text-xs mt-2 text-gray-400">2000</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="h-[65%] w-full bg-gradient-to-t from-orange-400/70 to-orange-400/20 rounded-t-md relative">
-                  <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">65%</span>
-                </div>
-                <span className="text-xs mt-2 text-gray-400">2010</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="h-[85%] w-full bg-gradient-to-t from-red-500/70 to-red-500/20 rounded-t-md relative">
-                  <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">85%</span>
-                </div>
-                <span className="text-xs mt-2 text-gray-400">2020</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="h-[95%] w-full bg-gradient-to-t from-red-600/70 to-red-600/20 rounded-t-md relative">
-                  <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-gray-300">95%</span>
-                </div>
-                <span className="text-xs mt-2 text-gold">Today</span>
-              </div>
+          {/* Interactive Pollution Chart */}
+          <div className="glass-dark rounded-2xl p-6 lg:p-8 mb-12 transform hover:scale-[1.02] transition-all duration-300">
+            <h3 className="text-xl font-medium mb-6 text-white">Global Urban Pollution Trends</h3>
+            <div className="h-[300px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={pollutionData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                  <XAxis 
+                    dataKey="year" 
+                    stroke="rgba(255,255,255,0.5)"
+                    tick={{ fill: 'rgba(255,255,255,0.5)' }}
+                  />
+                  <YAxis 
+                    stroke="rgba(255,255,255,0.5)"
+                    tick={{ fill: 'rgba(255,255,255,0.5)' }}
+                  />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'rgba(0,0,0,0.8)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      borderRadius: '8px',
+                    }}
+                  />
+                  <Line 
+                    type="monotone" 
+                    dataKey="level" 
+                    stroke="#D4AF37"
+                    strokeWidth={2}
+                    dot={{ stroke: '#D4AF37', strokeWidth: 2, fill: '#121212' }}
+                    activeDot={{ r: 8, stroke: '#D4AF37', strokeWidth: 2, fill: '#121212' }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
             </div>
-            <p className="text-xs text-gray-400 mt-4 text-center">Percentage of urban population exposed to harmful levels of air pollution</p>
+            <p className="text-xs text-gray-400 mt-4 text-center">
+              Pollution Levels in Major Cities (PM2.5 concentration μg/m³)
+            </p>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.id}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="group relative bg-black/30 backdrop-blur-sm rounded-xl p-8 border border-white/10 transition-all duration-500 opacity-0 translate-y-10 hover-lift overflow-hidden"
+              className="group relative glass-dark rounded-xl p-8 transition-all duration-500 opacity-0 translate-y-10 hover:translate-y-[-4px] overflow-hidden"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* Gradient background effect */}
+              {/* Animated gradient background */}
               <div className={`absolute inset-0 bg-gradient-radial ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
               
               <div className="relative z-10">
