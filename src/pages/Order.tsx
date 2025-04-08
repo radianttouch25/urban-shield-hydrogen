@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { useStatsigClient } from "@statsig/react-bindings";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import OrderFeatureList from "@/components/cta/OrderFeatureList";
+import { StatsigEventLogger } from "@/components/StatsigEventLogger";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -54,12 +56,25 @@ const Order = () => {
     },
   });
 
+  const { client } = useStatsigClient();
+
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
 
     try {
       console.log("Form data:", data);
       await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // Log order event to Statsig
+      if (client) {
+        client.logEvent("order_submitted", "urban_shield_product", {
+          orderType: data.orderType,
+          quantity: data.quantity,
+          timestamp: new Date().toISOString()
+        });
+        console.log("Logged order event to Statsig");
+      }
+
       toast.success("Order submitted successfully! We'll contact you soon with payment details.");
       form.reset();
     } catch (error) {
@@ -353,6 +368,20 @@ const Order = () => {
       </main>
 
       <Footer />
+
+      {/* Statsig Event Logger Example - Hidden in production */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <StatsigEventLogger
+          eventName="page_view"
+          eventValue="order_page"
+          eventMetadata={{
+            referrer: document.referrer,
+            timestamp: new Date().toISOString(),
+            page: "order"
+          }}
+          buttonText="Log Order Page View"
+        />
+      </div>
     </div>
   );
 };

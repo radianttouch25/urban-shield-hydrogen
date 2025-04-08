@@ -6,6 +6,7 @@ import ProductFeatures from "@/components/ProductFeatures";
 import TechnologySection from "@/components/TechnologySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import { StatsigEventLogger } from "@/components/StatsigEventLogger";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -122,6 +123,20 @@ const Index = () => {
       </main>
 
       <Footer />
+
+      {/* Statsig Event Logger Example - Hidden in production */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <StatsigEventLogger
+          eventName="page_view"
+          eventValue="home_page"
+          eventMetadata={{
+            referrer: document.referrer,
+            timestamp: new Date().toISOString(),
+            page: "home"
+          }}
+          buttonText="Log Page View"
+        />
+      </div>
     </div>
   );
 };
