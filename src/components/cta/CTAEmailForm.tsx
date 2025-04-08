@@ -4,15 +4,15 @@ import { Mail, ArrowRight } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 
 interface CTAEmailFormProps {
-  inquiryType: 'pre-order' | 'investor';
+  inquiryType: 'order' | 'investor';
 }
 
 const CTAEmailForm = ({ inquiryType }: CTAEmailFormProps) => {
   const [email, setEmail] = useState('');
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Error",
@@ -21,16 +21,16 @@ const CTAEmailForm = ({ inquiryType }: CTAEmailFormProps) => {
       });
       return;
     }
-    
+
     // Simulate form submission
     toast({
       title: "Success!",
-      description: inquiryType === 'pre-order' 
-        ? "Your pre-order request has been received. We'll contact you soon!" 
+      description: inquiryType === 'order'
+        ? "Your order request has been received. We'll contact you soon!"
         : "Your investor inquiry has been received. Our team will be in touch shortly.",
       variant: "default",
     });
-    
+
     setEmail('');
   };
 
@@ -54,12 +54,12 @@ const CTAEmailForm = ({ inquiryType }: CTAEmailFormProps) => {
           />
         </div>
       </div>
-      
+
       <button
         type="submit"
         className="button-shine w-full flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20"
       >
-        {inquiryType === 'pre-order' ? 'Secure Your Pre-Order Now' : 'Submit Investment Inquiry'}
+        {inquiryType === 'order' ? 'Secure Your Order Now' : 'Submit Investment Inquiry'}
         <ArrowRight className="ml-2 h-5 w-5" />
       </button>
 

@@ -1,0 +1,42 @@
+# Robots.txt for Radiant Touch Urban Shield
+
+# Global rules for all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+Disallow: /dev/
+Disallow: /*.json$
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+
+# Rules for Google Images
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl delay to prevent server overload
+Crawl-delay: 5
+
+# Sitemap location
+Sitemap: https://radianttouch.pro/sitemap.xml

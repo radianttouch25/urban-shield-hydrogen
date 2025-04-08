@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Line } from 'recharts';
 import { Shield, Wind, Droplets, Zap } from 'lucide-react';
@@ -77,42 +76,42 @@ const ProductFeatures = () => {
   }, []);
 
   return (
-    <section id="product-features" className="relative py-20 bg-dark-light overflow-hidden">
+    <section id="product-features" className="relative py-12 md:py-20 bg-dark-light overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-5 bg-noise mix-blend-overlay"></div>
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent"></div>
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent"></div>
       
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block px-4 py-1 mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-            <span className="text-gold text-sm">The Urban Skin Challenge</span>
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <div className="inline-block px-4 py-1 mb-4 md:mb-6 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+            <span className="text-gold text-xs sm:text-sm">The Urban Skin Challenge</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
             <span className="text-gradient-gold">Your Skin Faces</span>
             <span className="block text-white">Invisible Urban Enemies</span>
           </h2>
           
-          <p className="text-lg text-gray-300 mb-12">
+          <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-12 px-2">
             Modern urban environments expose your skin to unprecedented levels of pollution and stress.
           </p>
           
           {/* Interactive Pollution Chart */}
-          <div className="glass-dark rounded-2xl p-6 lg:p-8 mb-12 transform hover:scale-[1.02] transition-all duration-300">
-            <h3 className="text-xl font-medium mb-6 text-white">Global Urban Pollution Trends</h3>
-            <div className="h-[300px] w-full">
+          <div className="glass-dark rounded-2xl p-4 sm:p-6 lg:p-8 mb-8 md:mb-12 transform hover:scale-[1.02] transition-all duration-300">
+            <h3 className="text-lg md:text-xl font-medium mb-4 md:mb-6 text-white">Global Urban Pollution Trends</h3>
+            <div className="h-[250px] sm:h-[300px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={pollutionData}>
+                <LineChart data={pollutionData} margin={{ top: 5, right: 10, left: -20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
                   <XAxis 
                     dataKey="year" 
                     stroke="rgba(255,255,255,0.5)"
-                    tick={{ fill: 'rgba(255,255,255,0.5)' }}
+                    tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: '0.75rem' }}
                   />
                   <YAxis 
                     stroke="rgba(255,255,255,0.5)"
-                    tick={{ fill: 'rgba(255,255,255,0.5)' }}
+                    tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: '0.75rem' }}
                   />
                   <Tooltip 
                     contentStyle={{ 
@@ -132,13 +131,13 @@ const ProductFeatures = () => {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <p className="text-xs text-gray-400 mt-4 text-center">
+            <p className="text-xs text-gray-400 mt-3 md:mt-4 text-center">
               Pollution Levels in Major Cities (PM2.5 concentration μg/m³)
             </p>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.id}

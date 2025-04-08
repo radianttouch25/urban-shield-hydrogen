@@ -44,18 +44,18 @@ const Contact = () => {
   // Form submission handler
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
+
     // Simulate API call
     try {
       // In a real application, you would send this data to your backend
       console.log("Form data:", data);
-      
+
       // Simulate network delay
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       // Show success message
-      toast.success("Pre-order submitted successfully! We'll contact you soon with payment details.");
-      
+      toast.success("Order submitted successfully! We'll contact you soon with payment details.");
+
       // Reset form
       form.reset();
     } catch (error) {
@@ -69,12 +69,51 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-dark text-white">
       <Helmet>
-        <title>Contact Urban Shield | Radiant Touch</title>
-        <meta name="description" content="Contact Radiant Touch about Urban Shield, the revolutionary anti-pollution skincare product." />
+        <title>Contact Us | Urban Shield by Radiant Touch</title>
+        <meta name="description" content="Contact Radiant Touch about Urban Shield, the revolutionary anti-pollution skincare product. Get in touch with our team for inquiries, support, or partnership opportunities." />
+        <meta name="keywords" content="contact Urban Shield, Radiant Touch contact, skincare support, anti-pollution skincare inquiry, Urban Shield help" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://radianttouch.pro/contact" />
+        <meta property="og:title" content="Contact Us | Urban Shield by Radiant Touch" />
+        <meta property="og:description" content="Contact Radiant Touch about Urban Shield, the revolutionary anti-pollution skincare product. Get in touch with our team for inquiries, support, or partnership opportunities." />
+        <meta property="og:image" content="/assets/logo_radiant_touch.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://radianttouch.pro/contact" />
+        <meta property="twitter:title" content="Contact Us | Urban Shield by Radiant Touch" />
+        <meta property="twitter:description" content="Contact Radiant Touch about Urban Shield, the revolutionary anti-pollution skincare product. Get in touch with our team for inquiries, support, or partnership opportunities." />
+        <meta property="twitter:image" content="/assets/logo_radiant_touch.png" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Urban Shield Contact Page",
+              "description": "Contact Radiant Touch about Urban Shield anti-pollution skincare products.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Radiant Touch LIMITED",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://radianttouch.pro/assets/logo_radiant_touch.png"
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://radianttouch.pro/contact"
+              }
+            }
+          `}
+        </script>
       </Helmet>
-      
+
       <Navbar />
-      
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -87,7 +126,7 @@ const Contact = () => {
                 Have questions about Urban Shield? Get in touch with our team. Fill out the form below to contact us.
               </p>
             </div>
-            
+
             <div className="bg-dark-light rounded-xl p-6 md:p-10 border border-white/10">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -105,7 +144,7 @@ const Contact = () => {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="email"
@@ -120,7 +159,7 @@ const Contact = () => {
                       )}
                     />
                   </div>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormField
                       control={form.control}
@@ -135,7 +174,7 @@ const Contact = () => {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="quantity"
@@ -150,7 +189,7 @@ const Contact = () => {
                       )}
                     />
                   </div>
-                  
+
                   <FormField
                     control={form.control}
                     name="orderType"
@@ -187,7 +226,7 @@ const Contact = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
@@ -195,7 +234,7 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Additional Comments (Optional)</FormLabel>
                         <FormControl>
-                          <Textarea 
+                          <Textarea
                             placeholder="Let us know if you have any special requests or questions"
                             className="min-h-[120px]"
                             {...field}
@@ -205,27 +244,27 @@ const Contact = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <div className="pt-4">
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full md:w-auto button-shine bg-gradient-gold text-dark hover:shadow-lg transition-all"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Processing..." : "Submit Pre-Order"}
+                      {isSubmitting ? "Processing..." : "Submit Order"}
                     </Button>
                   </div>
-                  
+
                   <p className="text-sm text-gray-400">
                     By submitting this form, you agree to our <a href="/terms" className="text-gold hover:underline">Terms of Service</a> and <a href="/privacy" className="text-gold hover:underline">Privacy Policy</a>. You'll be contacted with payment details within 24 hours.
                   </p>
                 </form>
               </Form>
             </div>
-            
+
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-dark-light rounded-xl p-6 border border-white/10">
-                <h2 className="text-xl font-bold mb-4 text-gradient-gold">Pre-Order Benefits</h2>
+                <h2 className="text-xl font-bold mb-4 text-gradient-gold">Order Benefits</h2>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <div className="mr-3 mt-1 text-gold">✦</div>
@@ -245,7 +284,7 @@ const Contact = () => {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="bg-dark-light rounded-xl p-6 border border-white/10">
                 <h2 className="text-xl font-bold mb-4 text-gradient-gold">Contact Information</h2>
                 <div className="space-y-4">
@@ -272,8 +311,8 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <a 
-                    href="mailto:investors@radianttouch.pro" 
+                  <a
+                    href="mailto:investors@radianttouch.pro"
                     className="inline-block button-shine bg-gradient-gold text-dark px-6 py-2 rounded-md hover:shadow-lg transition-shadow"
                   >
                     Contact Investor Relations
@@ -284,7 +323,7 @@ const Contact = () => {
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

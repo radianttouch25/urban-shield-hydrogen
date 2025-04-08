@@ -1,7 +1,6 @@
-
 import { Shield } from 'lucide-react';
 
-const PreOrderFeatureList = () => {
+const OrderFeatureList = () => {
   const features = [
     'Limited First Release',
     'Priority Shipping',
@@ -23,4 +22,4 @@ const PreOrderFeatureList = () => {
   );
 };
 
-export default PreOrderFeatureList;
+export default OrderFeatureList;

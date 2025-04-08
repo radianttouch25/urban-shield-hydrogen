@@ -8,27 +8,16 @@ interface TechnologyTabButtonProps {
   onClick: () => void;
 }
 
-const TechnologyTabButton: React.FC<TechnologyTabButtonProps> = ({ 
-  technology, 
-  isActive, 
-  onClick 
-}) => {
-  const IconComponent = technology.icon;
-  
+const TechnologyTabButton: React.FC<TechnologyTabButtonProps> = ({ technology, isActive, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`flex items-center px-6 py-3 rounded-md text-sm font-medium transition-all duration-300 ${
-        isActive 
-          ? `bg-${technology.color} text-dark shadow-lg` 
-          : 'text-gray-300 hover:text-white'
-      }`}
-      style={isActive ? {backgroundColor: `var(--${technology.color}, #D4AF37)`} : {}}
+      className={`flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition-all mx-1 flex-shrink-0 ${isActive ? 'bg-dark border border-white/20 shadow-lg' : 'hover:bg-dark-light/50'}`}
     >
-      <span className={`mr-2 ${isActive ? 'text-dark' : `text-${technology.color}`}`}>
-        <IconComponent className="h-8 w-8" />
+      <technology.icon className={`h-4 w-4 sm:h-5 sm:w-5 ${isActive ? `text-${technology.color}` : 'text-gray-400'}`} />
+      <span className={`ml-1.5 sm:ml-2 whitespace-nowrap text-xs sm:text-sm ${isActive ? 'text-white font-medium' : 'text-gray-400'}`}>
+        {technology.title.split(' ')[0]}
       </span>
-      {technology.title}
     </button>
   );
 };

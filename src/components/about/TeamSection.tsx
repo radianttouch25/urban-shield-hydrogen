@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Linkedin, Mail } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -10,8 +9,9 @@ interface TeamSectionProps {
 const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
   ({ sectionRef }, ref) => {
     return (
-      <section 
+      <section
         ref={ref}
+        id="team"
         className="container mx-auto px-4 mb-12 opacity-0 translate-y-10 transition-all duration-700"
       >
         <div ref={el => sectionRef(el)} className="max-w-5xl mx-auto">
@@ -23,14 +23,14 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
               The visionaries and experts behind Urban Shield
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Team member cards */}
             <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
               <div className="aspect-square relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/04488e94-b7fc-46c4-9760-2f2ba39b836d.png" 
-                  alt="Dr. Elizabeth Chen" 
+                <img
+                  src="/assets/04488e94-b7fc-46c4-9760-2f2ba39b836d.png"
+                  alt="Dr. Elizabeth Chen"
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
@@ -53,12 +53,12 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
               <div className="aspect-square relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/d926396f-8e77-4f5d-9d84-c626235ee99e.png" 
-                  alt="Marcus Reynolds" 
+                <img
+                  src="/assets/d926396f-8e77-4f5d-9d84-c626235ee99e.png"
+                  alt="Marcus Reynolds"
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
@@ -81,12 +81,12 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-dark/30 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
               <div className="aspect-square relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/fb7a29f8-4569-4314-86c6-cb50377eff23.png" 
-                  alt="Dr. Aisha Khatri" 
+                <img
+                  src="/assets/fb7a29f8-4569-4314-86c6-cb50377eff23.png"
+                  alt="Dr. Aisha Khatri"
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
@@ -110,7 +110,7 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
               </div>
             </div>
           </div>
-          
+
           <div className="mt-16 text-center">
             <p className="text-xl text-gray-300 mb-6">
               Interested in joining our team?

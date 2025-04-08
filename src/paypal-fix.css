@@ -1,0 +1,22 @@
+/* PayPal Button Text Input Fix */
+#paypal-container-2RSCFR53NNZ56 input,
+#paypal-container-PWLD3ZJR768C6 input {
+  color: #000000 !important; /* Force black text color for visibility */
+  background-color: #ffffff !important; /* Force white background for contrast */
+  border: 1px solid #cccccc !important; /* Add visible border */
+}
+
+/* Ensure placeholder text is also visible */
+#paypal-container-2RSCFR53NNZ56 input::placeholder,
+#paypal-container-PWLD3ZJR768C6 input::placeholder {
+  color: #666666 !important; /* Medium gray for placeholder text */
+}
+
+/* Ensure text remains visible during input */
+#paypal-container-2RSCFR53NNZ56 input:focus,
+#paypal-container-PWLD3ZJR768C6 input:focus {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  outline: 2px solid #D4AF37 !important; /* Gold outline to match site theme */
+  border-color: #D4AF37 !important;
+}

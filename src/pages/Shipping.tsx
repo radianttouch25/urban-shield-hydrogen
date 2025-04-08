@@ -8,25 +8,112 @@ const Shipping = () => {
   return (
     <div className="min-h-screen bg-dark text-white">
       <Helmet>
-        <title>Pre-Order Policy | Urban Shield by Radiant Touch</title>
-        <meta name="description" content="Learn about our pre-order policies, delivery timeframes, and international shipping options for Urban Shield skincare products." />
+        <title>Shipping & Order Policy | Urban Shield Anti-Pollution Skincare</title>
+        <meta name="description" content="Discover Urban Shield's shipping policies, international delivery options, and order processing timeframes. Get your anti-pollution skincare products delivered worldwide with our reliable shipping service." />
+        <meta name="keywords" content="Urban Shield shipping, skincare delivery, international shipping, order policy, delivery timeframes, anti-pollution skincare shipping, UK shipping, Europe shipping" />
+        <meta name="author" content="Radiant Touch LIMITED" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://radianttouch.pro/shipping" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://radianttouch.pro/shipping" />
+        <meta property="og:title" content="Shipping & Order Policy | Urban Shield Anti-Pollution Skincare" />
+        <meta property="og:description" content="Discover Urban Shield's shipping policies, international delivery options, and order processing timeframes. Get your anti-pollution skincare products delivered worldwide with our reliable shipping service." />
+        <meta property="og:image" content="/lovable-uploads/urban-shield-bottle.png" />
+        <meta property="og:site_name" content="Radiant Touch" />
+        <meta property="og:locale" content="en_GB" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://radianttouch.pro/shipping" />
+        <meta property="twitter:title" content="Shipping & Order Policy | Urban Shield Anti-Pollution Skincare" />
+        <meta property="twitter:description" content="Discover Urban Shield's shipping policies, international delivery options, and order processing timeframes. Get your anti-pollution skincare products delivered worldwide with our reliable shipping service." />
+        <meta property="twitter:image" content="/lovable-uploads/urban-shield-bottle.png" />
+        <meta name="twitter:site" content="@RadiantTouchLtd" />
+        <meta name="twitter:creator" content="@RadiantTouchLtd" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Urban Shield Shipping & Order Policy",
+              "description": "Information about shipping policies, delivery timeframes, and international shipping options for Urban Shield anti-pollution skincare products.",
+              "datePublished": "2024-12-20",
+              "dateModified": "2025-04-08",
+              "inLanguage": "en-GB",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "Radiant Touch",
+                "url": "https://radianttouch.pro"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Radiant Touch LIMITED",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://radianttouch.pro/lovable-uploads/logo_radiant_touch.png",
+                  "width": "112",
+                  "height": "112"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "United Kingdom"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "customer service",
+                  "email": "info@radianttouch.pro",
+                  "telephone": "+447459394987"
+                }
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://radianttouch.pro/shipping"
+              },
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", "h2"]
+              },
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://radianttouch.pro"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Shipping & Order Policy",
+                    "item": "https://radianttouch.pro/shipping"
+                  }
+                ]
+              }
+            }
+          `}
+        </script>
       </Helmet>
-      
+
       <Navbar />
-      
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-white">Pre-Order</span>
+                <span className="text-white">Order</span>
                 <span className="block text-gradient-gold">Policy</span>
               </h1>
               <p className="text-gray-300 text-lg">
-                Information about pre-orders, delivery timeframes, and international orders.
+                Information about orders, delivery timeframes, and international shipping.
               </p>
             </div>
-            
+
             <div className="space-y-12">
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Processing Timeframes</h2>
@@ -35,11 +122,11 @@ const Shipping = () => {
                     All orders are processed within 1-2 business days (excluding weekends and holidays) after receiving your order confirmation email. You will receive another notification when your order has shipped.
                   </p>
                   <p>
-                    For pre-orders specifically: Your pre-order will be processed as a priority when products become available, with estimated shipping in Early June 2025. You will receive an email notification before your pre-order ships.
+                    For orders: Your order will be processed as a priority, with estimated shipping in Early June 2025. You will receive an email notification before your order ships.
                   </p>
                 </div>
               </section>
-              
+
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Shipping Methods & Delivery Times</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
@@ -52,7 +139,7 @@ const Shipping = () => {
                         <li>Priority Shipping (£14.95): 1-2 business days</li>
                       </ul>
                     </div>
-                    
+
                     <div>
                       <h3 className="font-bold mb-2">International Shipping</h3>
                       <ul className="list-disc pl-5 space-y-2 text-gray-300">
@@ -68,7 +155,7 @@ const Shipping = () => {
                   </div>
                 </div>
               </section>
-              
+
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Tracking Information</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
@@ -80,7 +167,7 @@ const Shipping = () => {
                   </p>
                 </div>
               </section>
-              
+
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Shipping Restrictions</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
@@ -99,7 +186,7 @@ const Shipping = () => {
                   </p>
                 </div>
               </section>
-              
+
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Returns & Exchanges</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
@@ -111,12 +198,12 @@ const Shipping = () => {
                   </p>
                 </div>
               </section>
-              
+
               <section>
                 <h2 className="text-2xl font-bold mb-4 text-gradient-gold">Contact Us</h2>
                 <div className="bg-dark-light rounded-xl p-6 border border-white/10">
                   <p className="mb-4">
-                    If you have any questions about our pre-order policy, please contact us:
+                    If you have any questions about our order policy, please contact us:
                   </p>
                   <ul className="list-disc pl-5 space-y-2 text-gray-300">
                     <li>Email: info@radianttouch.pro</li>
@@ -126,13 +213,13 @@ const Shipping = () => {
                 </div>
               </section>
             </div>
-            
+
             <div className="mt-16 text-center">
-              <Link 
-                to="/preorder" 
+              <Link
+                to="/order"
                 className="button-shine inline-flex items-center justify-center px-8 py-3 rounded-md bg-gradient-gold text-dark font-medium transition-all hover:shadow-lg hover:shadow-gold/20 mx-auto"
               >
-                Pre-Order Now
+                Order Now
               </Link>
               <p className="text-gray-400 mt-4">
                 Secure your Urban Shield product today with our hassle-free shipping
@@ -141,7 +228,7 @@ const Shipping = () => {
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

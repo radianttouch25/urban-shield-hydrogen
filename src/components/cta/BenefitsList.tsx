@@ -1,12 +1,12 @@
 
 interface BenefitsListProps {
-  inquiryType: 'pre-order' | 'investor';
+  inquiryType: 'order' | 'investor';
 }
 
 const BenefitsList = ({ inquiryType }: BenefitsListProps) => {
-  const preOrderBenefits = [
-    '20% pre-launch discount',
-    'Priority shipping when product launches',
+  const orderBenefits = [
+    '20% discount',
+    'Priority shipping',
     'Exclusive early access to future products',
     'Free skin assessment consultation'
   ];
@@ -18,8 +18,8 @@ const BenefitsList = ({ inquiryType }: BenefitsListProps) => {
     'Direct access to founding team'
   ];
 
-  const benefits = inquiryType === 'pre-order' ? preOrderBenefits : investorBenefits;
-  const title = inquiryType === 'pre-order' ? 'Exclusive pre-order benefits:' : 'Investment opportunity highlights:';
+  const benefits = inquiryType === 'order' ? orderBenefits : investorBenefits;
+  const title = inquiryType === 'order' ? 'Exclusive order benefits:' : 'Investment opportunity highlights:';
 
   return (
     <div className="mb-4 text-sm text-gray-300">

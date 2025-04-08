@@ -1,4 +1,3 @@
-
 import { Shield, Droplets, Wind, Zap, Leaf } from 'lucide-react';
 import React from 'react';
 
@@ -25,7 +24,7 @@ export const technologies: Technology[] = [
       '24-hour active protection'
     ],
     color: 'gold',
-    image: '/lovable-uploads/fe4e0f1b-21eb-4787-94ec-269344df1076.png'
+    image: '/assets/sticla.png'
   },
   {
     id: 'antioxidant',
@@ -39,7 +38,7 @@ export const technologies: Technology[] = [
       'Brightens and evens skin tone'
     ],
     color: 'silver',
-    image: '/lovable-uploads/fb7a29f8-4569-4314-86c6-cb50377eff23.png'
+    image: '/assets/fb7a29f8-4569-4314-86c6-cb50377eff23.png'
   },
   {
     id: 'barrier',
@@ -53,13 +52,13 @@ export const technologies: Technology[] = [
       'Improves moisture retention'
     ],
     color: 'rosegold',
-    image: '/lovable-uploads/d1bf6ad0-0c6e-40bc-b905-2f192af5660b.png'
+    image: '/assets/drop.jpeg'
   },
   {
     id: 'biotech',
     icon: Leaf,
     title: 'Pollution-Neutralizing Biotech',
-    description: 'Urban Shield utilizes cutting-edge biotechnology ingredients that actively neutralize pollution particles on contact. Our fast-absorbing, non-greasy formula creates an invisible shield that prevents pollutants from adhering to the skin while providing hydration and protection against blue light from electronic devices.',
+    description: 'Urban Shield utilizes cutting-edge biotechnology ingredients that actively neutralize pollution particles on contact. Our fast-absorbing, non-greasy formula creates an invisible shield that prevents pollutants from adhering to the skin.',
     details: [
       'Active pollution neutralizers',
       'Fast-absorbing formula',
@@ -67,6 +66,6 @@ export const technologies: Technology[] = [
       'Blue light protection'
     ],
     color: 'gold',
-    image: '/lovable-uploads/fe4e0f1b-21eb-4787-94ec-269344df1076.png'
+    image: '/assets/shield.png'
   }
 ];
