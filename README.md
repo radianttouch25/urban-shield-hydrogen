@@ -1,8 +1,8 @@
-# Urban Shield Project
+# Urban Shield Hydrogen
 
 ## Project info
 
-**Urban Shield**: A premium skincare product by Radiant Touch
+**Urban Shield**: A premium skincare product by Radiant Touch featuring revolutionary anti-pollution technology
 
 ## How can I edit this code?
 
@@ -18,10 +18,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/radianttouch25/urban-shield-hydrogen.git
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd urban-shield-hydrogen
 
 # Step 3: Install the necessary dependencies.
 npm i
@@ -56,7 +56,9 @@ This project is built with .
 
 ## How can I deploy this project?
 
-This project can be deployed using services like Netlify, Vercel, or Firebase Hosting.
+This project is deployed using GitHub Pages. The deployment is automated through GitHub Actions workflow that builds and deploys the site whenever changes are pushed to the main branch.
+
+You can also deploy this project using services like Netlify, Vercel, or Firebase Hosting.
 
 ## Custom domain setup
 
